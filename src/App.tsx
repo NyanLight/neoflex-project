@@ -1,11 +1,11 @@
 import './App.css'
-import { Button } from './ui/Button/Button'
+import { Header } from './components/Header/Header'
 
 function App() {
 
   return (
     <>
-      <Button text="Hello" padding={50} />
+      <Header />
     </>
   )
 }

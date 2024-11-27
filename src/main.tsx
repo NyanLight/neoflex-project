@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import '@fontsource/ubuntu'
-import '@fontsource-variable/rubik'
+import '@fontsource/ubuntu/index.css'
+import '@fontsource-variable/rubik/index.css'
 
 import './index.css'
 import App from './App.tsx'

@@ -1,4 +1,6 @@
-function Header() {
+import { Button } from "../../ui/Button/Button"
+
+export function Header() {
     const links = [
         {   
             key: 1,
@@ -28,10 +30,14 @@ function Header() {
             <span>NeoBank</span>
             <nav>
                <ul>
-                
+                {links.map(link => 
+                    <li key={link.key}>
+                        <a href={link.url}>{link.name}</a>
+                    </li>
+                )}
                </ul>
             </nav>
-
+            <Button text="Online Bank" padding={8} />
         </header>
     )
 }
