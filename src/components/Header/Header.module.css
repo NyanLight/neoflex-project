@@ -23,6 +23,7 @@
 header ul {
     display: flex;
     gap: 2.5rem;
+    padding: 0;
 }
 
 .header li {
@@ -40,16 +41,24 @@ header ul {
     color: #B2A35F;
 }
 
+@media (max-width: 920px) {
+    .header {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 3rem;
+}
+
+
+}
+    
 @media  (max-width:500px) {
     .header {
         flex-direction: column;
         gap: 2rem;
         margin-bottom: 3rem;
     }
-
     .header ul {
         gap: 1rem;
         padding: 0;
     }
 }
-    

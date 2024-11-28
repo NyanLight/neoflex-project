@@ -19,9 +19,15 @@
     margin: auto;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 920px) {
     .map img {
         width: 300px;
+    }
+    
+}
+@media (max-width: 500px) {
+    .map img {
+        width: 250px;
     }
     
 }

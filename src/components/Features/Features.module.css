@@ -26,6 +26,13 @@
     margin-bottom: 0.625rem;
 }
 
+@media (max-width:920px) {
+    .features__guy {
+        width: 300px;
+    }
+}
+
+    
 @media (max-width:500px) {
     .features__guy {
         display: none;
@@ -35,5 +42,3 @@
         text-align: center;
     }
 }
-
-    
