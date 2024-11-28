@@ -1,4 +1,7 @@
 .button {
     background-color: #003CFF;
     font-family: 'Ubuntu', sans-serif;
+    color: white;
+    border: none;
+    border-radius: 8px;
 }

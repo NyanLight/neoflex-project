@@ -5,6 +5,7 @@ import { Map } from './components/Map/Map'
 import { Cards } from './components/Cards/Cards'
 import { Subscription } from './components/Subscription/Subscription'
 import { Features } from './components/Features/Features'
+import { Currencies } from './components/Currencies/Currencies'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <Cards />
       <Features />
+      <Currencies />
       <Map />
       <Subscription />
       <Footer />

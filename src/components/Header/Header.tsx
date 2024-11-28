@@ -1,5 +1,6 @@
 import { Button } from "../../ui/Button/Button"
 import type { Link } from "../../types"
+import classes from './Header.module.css'
 
 export function Header() {
     const links: Link[] = [
@@ -27,10 +28,10 @@ export function Header() {
 
 
     return (
-        <header>
-            <span>NeoBank</span>
+        <header className={classes.header}>
+            <span className={classes.header__textLogo}>NeoBank</span>
             <nav>
-               <ul>
+               <ul className={classes.header__navigation}>
                 {links.map(link => 
                     <li key={link.key}>
                         <a href={link.url}>{link.name}</a>
