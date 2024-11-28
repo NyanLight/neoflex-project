@@ -1,11 +1,54 @@
 .footer {
-    
     background-color: #ece9e9;
+    padding: 96px 216px
+}
+
+.footer__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.footer address {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+.footer__phone {
+    font-size: 1.875rem;
+    font-weight: bold;  
+}
+
+.footer__mail {
+    color: #2D3748;
+}
+
+.footer nav {
+    margin-bottom: 1.75rem;
+}
+
+.footer ul {
+    display: flex; 
+    gap: 2rem;
+}
+
+.footer li {
+    list-style: none;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
 }
 
 .footer__line {
     height: 2px;
     background-color: white;
+    margin-bottom: 2rem;
 }
 
 .footer__cookies {

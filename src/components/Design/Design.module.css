@@ -1,0 +1,17 @@
+.design {
+    display: flex;
+    max-width: 1400px;
+    margin: auto;
+    gap: 10rem;
+}
+
+.design h1 {
+    font-size: 3rem;
+    margin-bottom: 2.25rem;
+}
+
+.design__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
