@@ -29,7 +29,7 @@
 
 .inputField {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: white;
     max-width: 32.8125rem;
@@ -44,8 +44,19 @@
     align-items: center;
 }
 
+.inputField__icon {
+ margin-right: 0.625rem;
+ width: 1.75rem;
+}
+
 input {
     border: 0;
+}
+
+input::placeholder {
+    font-family: 'Nunito Sans Variable', sans-serif;
+    color: #9092B0;
+    font-size: 1.25rem;
 }
 
 .subscription__btn {

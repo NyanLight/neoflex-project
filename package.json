@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/nunito-sans": "^5.1.0",
     "@fontsource-variable/rubik": "^5.1.0",
     "@fontsource/ubuntu": "^5.1.0",
     "react": "^18.3.1",
