@@ -1,7 +1,8 @@
 .design {
     display: flex;
-    max-width: 1400px;
+    max-width: 1300px;
     margin: auto;
+    margin-bottom: 7rem;
     gap: 10rem;
 }
 

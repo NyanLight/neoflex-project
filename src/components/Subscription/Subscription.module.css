@@ -1,0 +1,63 @@
+
+.subscription__support {
+    color: #EB801D;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.875rem;
+}
+
+
+
+.subscription__title, .subscription__title__bold {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.875rem;
+}
+
+.subscription__title__bold {
+    font-weight: bold;
+    margin-bottom: 1.625rem;
+}
+
+
+.subscription__title {
+    font-weight: 500;
+    margin-bottom: 3.875rem;
+}
+
+.inputField {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    max-width: 32.8125rem;
+    margin: auto;
+    padding: 1.625rem 2rem;
+    border-radius: 20px;
+    margin-bottom: 6.125rem;
+}
+
+.inputField > div {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    border: 0;
+}
+
+.subscription__btn {
+    border: 0;
+    background-color: #686DF1;
+    padding: 0.85rem 1.875rem 0.85rem 3.4rem;
+    background-image: url(src/assets/send.svg);
+    background-repeat: no-repeat;
+    background-position: 0.875rem;
+    color: white;
+    border-radius: 1.25rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    
+}

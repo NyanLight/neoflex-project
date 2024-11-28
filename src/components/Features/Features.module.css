@@ -2,6 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1300px;
+    margin: auto;
+    margin-bottom: 3rem;
 }
 
 .features__title {

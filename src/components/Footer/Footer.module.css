@@ -1,6 +1,11 @@
 .footer {
     background-color: #ece9e9;
-    padding: 96px 216px
+    padding: 96px 216px;
+}
+
+.footer__wrapper {
+    max-width: 1300px;
+    margin: auto;
 }
 
 .footer__top {
@@ -30,7 +35,8 @@
 }
 
 .footer ul {
-    display: flex; 
+    display: flex;
+    flex-wrap: wrap; 
     gap: 2rem;
 }
 

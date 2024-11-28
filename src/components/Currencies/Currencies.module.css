@@ -1,0 +1,80 @@
+ .currencies__wrapper {
+    margin: auto;
+    background: linear-gradient(180deg, rgba(244,244,244,1) 0%, rgba(178,178,178,1) 100%);    max-width: 1200px;
+    margin-bottom: 3rem;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .currencies__title {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .currencies__title + div {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+
+  .currencies__info {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 400px;
+    gap: 20px;
+    margin-bottom: 3.1875rem;
+  }
+
+.currency {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+  .currency__name {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    color: #808080;
+  }
+
+  .currency__value {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  
+  .currency {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .currency__name {
+    font-weight: bold;
+  }
+
+  .currencies a {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .currencies__update {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    margin-bottom: 4.5rem;
+  }
+
+.currencies__icon {
+  display: block;
+  margin-left: auto;
+}
