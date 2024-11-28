@@ -1,0 +1,25 @@
+.features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.features__title {
+    margin-bottom: 1.25rem;
+}
+
+ h2 + div {
+    margin-bottom: 2rem;
+} 
+
+.features__checkedLi {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #4F5665;
+    font-size: 0.875rem;
+    margin-bottom: 0.625rem;
+}
+
+    
