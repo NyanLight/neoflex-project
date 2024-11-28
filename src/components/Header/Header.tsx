@@ -39,7 +39,7 @@ export function Header() {
                 )}
                </ul>
             </nav>
-            <Button text="Online Bank" padding={8} />
+            <Button text="Online Bank" padding={16} />
         </header>
     )
 }

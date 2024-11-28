@@ -3,11 +3,12 @@
     max-width: 1300px;
     margin: auto;
     margin-bottom: 7rem;
-    gap: 10rem;
+    gap: 9.5rem;
 }
 
 .design h1 {
     font-size: 3rem;
+    font-family: 'Ubuntu', sans-serif;
     margin-bottom: 2.25rem;
 }
 

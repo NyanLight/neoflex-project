@@ -5,7 +5,7 @@
     color: white;
     white-space: nowrap;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 .button:hover, .button:disabled {

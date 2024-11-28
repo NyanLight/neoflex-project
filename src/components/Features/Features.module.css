@@ -2,17 +2,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1300px;
+    max-width: 1400px;
     margin: auto;
     margin-bottom: 3rem;
+    gap: 6.625rem;
 }
 
 .features__title {
     margin-bottom: 1.25rem;
+    font-family: 'Ubuntu', sans-serif;
 }
 
  h2 + div {
     margin-bottom: 2rem;
+    font-family: 'Ubuntu', sans-serif;
 } 
 
 .features__checkedLi {
