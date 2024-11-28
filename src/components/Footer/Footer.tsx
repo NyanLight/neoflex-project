@@ -16,11 +16,11 @@ export function Footer(){
     ]    
 
     return (
-        <footer>
-            <div><img src="logo" className={classes.logo}/>
+        <footer className={classes.footer}>
+            <div><img src="src/assets/Logo.png" className={classes.footer__logo}/>
             <address>
-                <a href="tel:+74959842513" className={classes.phone}>+7 (495) 984 25 13</a>
-                <a href="mailto:info@neoflex.ru" className={classes.mail}>info@neoflex.ru</a>
+                <a href="tel:+74959842513" className={classes.footer__phone}>+7 (495) 984 25 13</a>
+                <a href="mailto:info@neoflex.ru" className={classes.footer__mail}>info@neoflex.ru</a>
             </address>
             </div>
             <nav>
@@ -30,8 +30,8 @@ export function Footer(){
                     )}
                 </ul>
                 </nav>
-            <div className={classes.line}></div>
-            <div className={classes.cookies}>We use cookies to personalize our services and improve the user experience of our website. Cookies are small files containing information about previous visits to a website. If you do not want to use cookies, please change your browser settings</div>
+            <div className={classes.footer_line}></div>
+            <div className={classes.footer__cookies}>We use cookies to personalize our services and improve the user experience of our website. Cookies are small files containing information about previous visits to a website. If you do not want to use cookies, please change your browser settings</div>
         </footer>
     )
     
