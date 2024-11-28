@@ -70,5 +70,10 @@ input::placeholder {
     border-radius: 1.25rem;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
-    
+}
+
+@media (max-width: 500px) {
+    .inputField {
+        padding: 0.8rem 1rem
+    }
 }

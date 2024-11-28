@@ -18,3 +18,10 @@
     display: block;
     margin: auto;
 }
+
+@media (max-width: 500px) {
+    .map img {
+        width: 300px;
+    }
+    
+}

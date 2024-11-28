@@ -78,3 +78,15 @@
   display: block;
   margin-left: auto;
 }
+
+@media (max-width: 500px) {
+  .currencies__info {
+    max-width: 100px;
+  }
+
+  .currencies__rightPart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

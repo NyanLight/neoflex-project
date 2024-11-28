@@ -26,4 +26,14 @@
     margin-bottom: 0.625rem;
 }
 
+@media (max-width:500px) {
+    .features__guy {
+        display: none;
+    }
+
+    .features {
+        text-align: center;
+    }
+}
+
     

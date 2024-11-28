@@ -39,3 +39,17 @@ header ul {
 .header a:hover {
     color: #B2A35F;
 }
+
+@media  (max-width:500px) {
+    .header {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .header ul {
+        gap: 1rem;
+        padding: 0;
+    }
+}
+    

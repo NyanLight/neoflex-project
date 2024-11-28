@@ -16,3 +16,21 @@
     flex-wrap: wrap;
     gap: 1rem;
 }
+
+@media (max-width: 500px) {
+    .design {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    .design__cards {
+        justify-content: center;
+    }
+
+    .design__choice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

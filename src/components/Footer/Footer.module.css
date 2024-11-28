@@ -63,3 +63,17 @@
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
+
+@media (max-width: 500px) {
+    .footer {
+        padding: 2rem;
+    }
+
+    .footer img {
+        width: 150px;
+    }
+
+    .footer__phone {
+        font-size: 1.2rem;
+    }
+}
