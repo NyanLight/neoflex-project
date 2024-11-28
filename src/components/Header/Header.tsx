@@ -1,7 +1,8 @@
 import { Button } from "../../ui/Button/Button"
+import type { Link } from "../../types"
 
 export function Header() {
-    const links = [
+    const links: Link[] = [
         {   
             key: 1,
             name: 'Credit card',
@@ -14,14 +15,14 @@ export function Header() {
         },
         {   
             key: 3,
-            name: 'Account',
-            url: 'www.example.com',            
+            name: 'Account',            
+            url: 'www.example.com',
         },
         {   
             key: 4,
             name: 'Resource',
             url: 'www.example.com',            
-        }
+        },
     ]
 
 
