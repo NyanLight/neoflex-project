@@ -36,3 +36,6 @@ header ul {
     text-decoration: none;
 }
 
+.header a:hover {
+    color: #B2A35F;
+}
