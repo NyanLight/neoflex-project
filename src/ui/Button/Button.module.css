@@ -1,7 +1,9 @@
 .button {
     background-color: #003CFF;
     font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
     color: white;
+    white-space: nowrap;
     border: none;
     border-radius: 8px;
 }
