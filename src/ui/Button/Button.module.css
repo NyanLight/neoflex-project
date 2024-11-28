@@ -7,3 +7,7 @@
     border: none;
     border-radius: 8px;
 }
+
+.button:hover, .button:disabled {
+    background-color: #7796C0;
+}
