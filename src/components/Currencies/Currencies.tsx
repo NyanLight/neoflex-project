@@ -1,12 +1,12 @@
-import classes from "./Currencies.module.css";
+import classes from './Currencies.module.css';
 
 const currencies = [
-  { key: 0, name: "USD", value: 60.78 },
-  { key: 1, name: "CNY", value: 9.08 },
-  { key: 2, name: "CHF", value: 64.78 },
-  { key: 3, name: "USD", value: 60.78 },
-  { key: 4, name: "JPY", value: 0.46 },
-  { key: 5, name: "TRY", value: 3.39 },
+  { key: 0, name: 'USD', value: 60.78 },
+  { key: 1, name: 'CNY', value: 9.08 },
+  { key: 2, name: 'CHF', value: 64.78 },
+  { key: 3, name: 'USD', value: 60.78 },
+  { key: 4, name: 'JPY', value: 0.46 },
+  { key: 5, name: 'TRY', value: 3.39 },
 ];
 
 export function Currencies() {

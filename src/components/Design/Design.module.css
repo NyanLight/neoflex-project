@@ -2,7 +2,6 @@
   display: flex;
   max-width: 1300px;
   margin: auto auto 7rem;
-  gap: 9.5rem;
 }
 
 .design h1 {
@@ -14,7 +13,12 @@
 .design__cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 1rem;
+}
+
+.design__card {
+  width: 230px;
 }
 
 @media (max-width: 920px) {
