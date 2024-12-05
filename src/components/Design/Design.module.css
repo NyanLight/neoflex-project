@@ -1,8 +1,7 @@
 .design {
     display: flex;
     max-width: 1300px;
-    margin: auto;
-    margin-bottom: 7rem;
+    margin: auto auto 7rem;
     gap: 9.5rem;
 }
 
