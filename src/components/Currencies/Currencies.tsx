@@ -1,4 +1,13 @@
-import classes from './Currencies.module.css';
+import classes from "./Currencies.module.css";
+
+const currencies = [
+  { key: 0, name: "USD", value: 60.78 },
+  { key: 1, name: "CNY", value: 9.08 },
+  { key: 2, name: "CHF", value: 64.78 },
+  { key: 3, name: "USD", value: 60.78 },
+  { key: 4, name: "JPY", value: 0.46 },
+  { key: 5, name: "TRY", value: 3.39 },
+];
 
 export function Currencies() {
   return (
@@ -10,30 +19,12 @@ export function Currencies() {
           </h2>
           <div>Currency</div>
           <ul className={classes.currencies__info}>
-            <li className={classes.currency}>
-              <div className={classes.currency__name}>USD:</div>
-              <div className={classes.currency__value}>60.78</div>
-            </li>
-            <li className={classes.currency}>
-              <div className={classes.currency__name}>CNY:</div>
-              <div className={classes.currency__value}>9.08</div>
-            </li>
-            <li className={classes.currency}>
-              <div className={classes.currency__name}>CHF:</div>
-              <div className={classes.currency__value}>64.78</div>
-            </li>
-            <li className={classes.currency}>
-              <div className={classes.currency__name}>USD:</div>
-              <div className={classes.currency__value}>60.78</div>
-            </li>
-            <li className={classes.currency}>
-              <div className={classes.currency__name}>JPY:</div>
-              <div className={classes.currency__value}>0.46</div>
-            </li>
-            <li className={classes.currency}>
-              <div className={classes.currency__name}>TRY</div>
-              <div className={classes.currency__value}>3.39</div>
-            </li>
+            {currencies.map((currency) => (
+              <li key={currency.key} className={classes.currency}>
+                <div className={classes.currency__name}>{currency.name}:</div>
+                <div className={classes.currency__value}>{currency.value}</div>
+              </li>
+            ))}
           </ul>
           <a href="example.com">All courses</a>
         </div>
