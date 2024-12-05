@@ -1,10 +1,10 @@
-import { Header } from '../components/Header/Header'
-import { Footer } from '../components/Footer/Footer'
-import { Map } from '../components/Map/Map'
-import { Design } from '../components/Design/Design'
-import { Subscription } from '../components/Subscription/Subscription'
-import { Features } from '../components/Features/Features'
-import { Currencies } from '../components/Currencies/Currencies'
+import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
+import { Map } from '../components/Map'
+import { Design } from '../components/Design'
+import { Subscription } from '../components/Subscription'
+import { Features } from '../components/Features'
+import { Currencies } from '../components/Currencies'
 
 export default function HomePage() {
     return (
