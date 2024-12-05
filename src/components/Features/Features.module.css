@@ -1,46 +1,45 @@
 .features {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1400px;
-    margin: auto auto 3rem;
-    gap: 6.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1400px;
+  margin: auto auto 3rem;
+  gap: 6.625rem;
 }
 
 .features__title {
-    margin-bottom: 1.25rem;
-    font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 1.25rem;
+  font-family: 'Ubuntu', sans-serif;
 }
 
- h2 + div {
-    margin-bottom: 2rem;
-    font-family: 'Ubuntu', sans-serif;
-} 
+h2 + div {
+  margin-bottom: 2rem;
+  font-family: 'Ubuntu', sans-serif;
+}
 
 .features__checkedLi {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: #4F5665;
-    font-family: 'Rubik Variable', sans-serif;
-    font-size: 0.875rem;
-    margin-bottom: 0.625rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #4f5665;
+  font-family: 'Rubik Variable', sans-serif;
+  font-size: 0.875rem;
+  margin-bottom: 0.625rem;
 }
 
-@media (max-width:920px) {
-    .features__guy {
-        width: 300px;
-    }
+@media (max-width: 920px) {
+  .features__guy {
+    width: 300px;
+  }
 }
 
-    
-@media (max-width:500px) {
-    .features__guy {
-        display: none;
-    }
+@media (max-width: 500px) {
+  .features__guy {
+    display: none;
+  }
 
-    .features {
-        text-align: center;
-    }
+  .features {
+    text-align: center;
+  }
 }

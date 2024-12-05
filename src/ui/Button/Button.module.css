@@ -1,13 +1,14 @@
 .button {
-    background-color: #003CFF;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    color: white;
-    white-space: nowrap;
-    border: none;
-    border-radius: 12px;
+  background-color: #003cff;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  border: none;
+  border-radius: 12px;
 }
 
-.button:hover, .button:disabled {
-    background-color: #7796C0;
+.button:hover,
+.button:disabled {
+  background-color: #7796c0;
 }

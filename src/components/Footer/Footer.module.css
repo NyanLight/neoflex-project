@@ -1,93 +1,93 @@
 .footer {
-    background-color: #ece9e9;
-    padding: 96px 216px;
-    width: 100%;
+  background-color: #ece9e9;
+  padding: 96px 216px;
+  width: 100%;
 }
 
 .footer__wrapper {
-    max-width: 1300px;
-    margin: auto;
+  max-width: 1300px;
+  margin: auto;
 }
 
 .footer__top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .footer address {
-    display: flex;
-    flex-direction: column;
-    gap: 0.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
 }
 
 .footer__phone {
-    font-size: 1.875rem;
-    font-weight: bold;  
+  font-size: 1.875rem;
+  font-weight: bold;
 }
 
 .footer__mail {
-    color: #2D3748;
+  color: #2d3748;
 }
 
 .footer nav {
-    margin-bottom: 1.75rem;
+  margin-bottom: 1.75rem;
 }
 
 .footer ul {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 2rem;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0;
 }
 
 .footer li {
-    list-style: none;
+  list-style: none;
 }
 
 .footer a {
-    color: black;
-    text-decoration: none;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
+  color: black;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
 }
 
 .footer__line {
-    height: 2px;
-    background-color: white;
-    margin-bottom: 2rem;
+  height: 2px;
+  background-color: white;
+  margin-bottom: 2rem;
 }
 
 .footer__cookies {
-    color: #2D3748;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
+  color: #2d3748;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
 }
 
 @media (max-width: 920px) {
-    .footer {
-        padding: 2rem;
-    }
+  .footer {
+    padding: 2rem;
+  }
 
-    .footer img {
-        width: 150px;
-    }
+  .footer img {
+    width: 150px;
+  }
 
-    .footer__phone {
-        font-size: 1.2rem;
-    }
+  .footer__phone {
+    font-size: 1.2rem;
+  }
 }
 @media (max-width: 500px) {
-    .footer {
-        padding: 2rem;
-    }
+  .footer {
+    padding: 2rem;
+  }
 
-    .footer img {
-        width: 150px;
-    }
+  .footer img {
+    width: 150px;
+  }
 
-    .footer__phone {
-        font-size: 1.2rem;
-    }
+  .footer__phone {
+    font-size: 1.2rem;
+  }
 }

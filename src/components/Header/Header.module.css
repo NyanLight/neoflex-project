@@ -1,63 +1,61 @@
 .header {
-   max-width: 1300px;
-   margin: auto auto 8.25rem;
-   padding: 1rem 0;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
+  max-width: 80%;
+  margin: auto auto 8.25rem;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header button {
-    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
 }
 
 .header__textLogo {
-    color: #B4387A;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: 'Ubuntu', sans-serif;
+  color: #b4387a;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 header ul {
-    display: flex;
-    gap: 2.5rem;
-    padding: 0;
+  display: flex;
+  gap: 2.5rem;
+  padding: 0;
 }
 
 .header li {
-    list-style: none;
+  list-style: none;
 }
 
 .header a {
-    color: black;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    text-decoration: none;
+  color: black;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .header a:hover {
-    color: #B2A35F;
+  color: #b2a35f;
 }
 
 @media (max-width: 920px) {
-    .header {
-        flex-direction: column;
-        gap: 2rem;
-        margin-bottom: 3rem;
+  .header {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
 }
 
-
-}
-    
-@media  (max-width:500px) {
-    .header {
-        flex-direction: column;
-        gap: 2rem;
-        margin-bottom: 3rem;
-    }
-    .header ul {
-        gap: 1rem;
-        padding: 0;
-    }
+@media (max-width: 500px) {
+  .header {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .header ul {
+    gap: 1rem;
+    padding: 0;
+  }
 }

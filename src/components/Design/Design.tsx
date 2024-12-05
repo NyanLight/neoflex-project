@@ -1,5 +1,5 @@
-import { Button } from "../../ui/Button/Button";
-import classes from "./Design.module.css";
+import { Button } from '../../ui/Button/Button';
+import classes from './Design.module.css';
 
 export function Design() {
   return (

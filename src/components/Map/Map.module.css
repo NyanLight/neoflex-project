@@ -1,33 +1,32 @@
-.map h2, .map__description {
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-    text-align: center;
+.map h2,
+.map__description {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  text-align: center;
 }
 
 .map__description {
-    font-size: 1rem;
-    margin-bottom: 3rem;
+  font-size: 1rem;
+  margin-bottom: 3rem;
 }
 
 .map h2 {
-    font-size: 1.875rem;
-    margin-bottom: 0.5rem;
+  font-size: 1.875rem;
+  margin-bottom: 0.5rem;
 }
 
 .map img {
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
 }
 
 @media (max-width: 920px) {
-    .map img {
-        width: 300px;
-    }
-    
+  .map img {
+    width: 300px;
+  }
 }
 @media (max-width: 500px) {
-    .map img {
-        width: 250px;
-    }
-    
+  .map img {
+    width: 250px;
+  }
 }

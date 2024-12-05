@@ -1,37 +1,36 @@
 .design {
-    display: flex;
-    max-width: 1300px;
-    margin: auto auto 7rem;
-    gap: 9.5rem;
+  display: flex;
+  max-width: 1300px;
+  margin: auto auto 7rem;
+  gap: 9.5rem;
 }
 
 .design h1 {
-    font-size: 3rem;
-    font-family: 'Ubuntu', sans-serif;
-    margin-bottom: 2.25rem;
+  font-size: 3rem;
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 2.25rem;
 }
 
 .design__cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-
-
 @media (max-width: 920px) {
-    .design {
-        flex-direction: column;
-        gap: 2rem;
-        text-align: center;
-    }
-    .design__cards {
-        justify-content: center;
-    }
+  .design {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
 
-    .design__choice {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .design__cards {
+    justify-content: center;
+  }
+
+  .design__choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
