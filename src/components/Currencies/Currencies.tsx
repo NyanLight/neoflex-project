@@ -1,5 +1,42 @@
 import classes from './Currencies.module.css';
 
+type Currency = {
+  key: number;
+  name: string;
+  value: number;
+};
+
+const FIFTEEN_MINUTES = 900000;
+
+async function fetchCurrencies(url: string) {
+  try {
+    const response = await fetch(url);
+    return response.json();
+  } catch (error) {
+    console.error('Ошибка при загрузке данных:', error);
+    return;
+  }
+}
+
+async function updateScreen(
+  currencies = ['USD', 'EUR', 'CAD', 'CNY', 'CHF', 'SGD'],
+) {
+  const currentValues = await fetchCurrencies(
+    'https://v6.exchangerate-api.com/v6/053bade72eeb1ae8be7d5eea/latest/RUB',
+  );
+
+  const currentCurrencies: Currency[] = [];
+  currencies.forEach((currency, index) => {
+    const key = index;
+    const name = currency;
+    const value = +(1 / currentValues.conversion_rates[currency]).toFixed(2);
+    currentCurrencies.push({ key, name, value });
+  });
+  console.log(currentCurrencies);
+}
+
+updateScreen();
+
 const currencies = [
   { key: 0, name: 'USD', value: 60.78 },
   { key: 1, name: 'CNY', value: 9.08 },
