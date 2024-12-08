@@ -1,12 +1,11 @@
 .currencies__wrapper {
-  margin: auto;
+  margin: auto auto 3rem;
   background: linear-gradient(
     180deg,
     rgba(244, 244, 244, 1) 0%,
     rgba(178, 178, 178, 1) 100%
   );
   max-width: 1200px;
-  margin-bottom: 3rem;
   border-radius: 15px;
   padding: 2rem;
   display: flex;
