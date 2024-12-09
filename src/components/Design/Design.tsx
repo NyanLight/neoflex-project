@@ -1,11 +1,11 @@
 import { Button } from '../../ui/Button/Button';
 import classes from './Design.module.css';
 
-const images: string[] = [
-  'src/assets/card1.png',
-  'src/assets/card2.png',
-  'src/assets/card3.png',
-  'src/assets/card4.png',
+const cards = [
+  { key: 0, src: 'src/assets/card1.png' },
+  { key: 1, src: 'src/assets/card2.png' },
+  { key: 2, src: 'src/assets/card3.png' },
+  { key: 3, src: 'src/assets/card4.png' },
 ];
 
 export function Design() {
@@ -16,16 +16,9 @@ export function Design() {
         <Button text="Choose the card" padding={16} />
       </div>
       <div className={classes.design__cards}>
-        {images.map((src, index) => {
-          return (
-            <img
-              src={src}
-              alt=""
-              key={index}
-              className={classes.design__card}
-            />
-          );
-        })}
+        {cards.map((card) => (
+          <img src={card.src} alt="" key={card.key} />
+        ))}
       </div>
     </section>
   );
