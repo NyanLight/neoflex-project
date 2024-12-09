@@ -1,0 +1,128 @@
+:root {
+  --items-visible: 3.5;
+}
+
+.slider__container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.buttons {
+  display: flex;
+  margin-left: auto;
+  gap: 1.2rem;
+}
+
+h2, h2 + div, .slider__item h3 a, .slider__description {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+
+h2 + div {
+  color: #2D3748;
+}
+
+
+.slider__btn {
+  width: 50px;
+  height: 50px;
+  background-color: #003CFF;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/src/assets/whiteArrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.previous {
+  transform: rotate(180deg);
+}
+
+.slider__btn:disabled {
+  background-image: url('/src/assets/blackArrow.svg');
+  background-color: white;
+  border: 2px solid #003CFF;
+  cursor: not-allowed;
+}
+
+.slider__wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 520px;
+  border-radius: 15px;
+  margin: 0 10px;
+}
+
+.slider {
+  display: flex;
+  gap: 80px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider__item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  width: 320px;
+  height: 450px;
+  box-sizing: border-box;
+  border-radius: 28px;
+  background-color: white;
+  box-shadow: 2px 3px 21px -9px rgba(0,0,0,0.35);
+}
+
+.slider__item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider__item h3 {
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.slider__title {
+  height: 100px;
+  overflow: hidden;
+}
+
+.slider__description {
+  height: 90px;
+  overflow: hidden;
+}
+
+.slider__item h3 a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+
+
+@media (max-width: 920px) {
+  .news {
+    display: none;
+  }
+}

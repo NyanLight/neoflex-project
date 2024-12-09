@@ -5,6 +5,7 @@ import { Design } from '../components/Design';
 import { Subscription } from '../components/Subscription';
 import { Features } from '../components/Features';
 import { Currencies } from '../components/Currencies';
+import { News } from '../components/News';
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Features />
       <Currencies />
       <Map />
+      <News />
       <Subscription />
       <Footer />
     </>
