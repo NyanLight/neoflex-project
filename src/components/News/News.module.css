@@ -17,7 +17,10 @@
   gap: 1.2rem;
 }
 
-h2, h2 + div, .slider__item h3 a, .slider__description {
+h2,
+h2 + div,
+.slider__item h3 a,
+.slider__description {
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
   font-weight: 500;
@@ -29,14 +32,13 @@ h2 {
 }
 
 h2 + div {
-  color: #2D3748;
+  color: #2d3748;
 }
-
 
 .slider__btn {
   width: 50px;
   height: 50px;
-  background-color: #003CFF;
+  background-color: #003cff;
   border: none;
   border-radius: 50%;
   color: white;
@@ -57,7 +59,7 @@ h2 + div {
 .slider__btn:disabled {
   background-image: url('/src/assets/blackArrow.svg');
   background-color: white;
-  border: 2px solid #003CFF;
+  border: 2px solid #003cff;
   cursor: not-allowed;
 }
 
@@ -86,7 +88,7 @@ h2 + div {
   box-sizing: border-box;
   border-radius: 28px;
   background-color: white;
-  box-shadow: 2px 3px 21px -9px rgba(0,0,0,0.35);
+  box-shadow: 2px 3px 21px -9px rgba(0, 0, 0, 0.35);
 }
 
 .slider__item img {
@@ -119,7 +121,6 @@ h2 + div {
   color: black;
   font-size: 1.2rem;
 }
-
 
 @media (max-width: 920px) {
   .news {
