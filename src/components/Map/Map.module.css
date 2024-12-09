@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.map {
+  margin-bottom: 3rem;
+}
+
 .map__description {
   font-size: 1rem;
   margin-bottom: 3rem;
