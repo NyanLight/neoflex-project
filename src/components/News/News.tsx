@@ -50,9 +50,7 @@ const useSlider = (itemsLength: number) => {
     if (sliderRef.current) {
       const sliderWidth = sliderRef.current.offsetWidth;
       const visibleItems = parseFloat(
-        getComputedStyle(document.documentElement).getPropertyValue(
-          '--items-visible',
-        ),
+        getComputedStyle(document.documentElement).getPropertyValue('--items-visible'),
       );
       const gap = parseFloat(
         getComputedStyle(sliderRef.current).getPropertyValue('gap'),
@@ -68,8 +66,16 @@ const useSlider = (itemsLength: number) => {
     }
   };
 
+  const handleResize = () => {
+    updateSliderPosition();
+  };
+
   useEffect(() => {
     updateSliderPosition();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [currentIndex, itemsLength]);
 
   const handlePrev = () => {
