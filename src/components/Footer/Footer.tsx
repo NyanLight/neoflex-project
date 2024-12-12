@@ -1,5 +1,5 @@
 import classes from './Footer.module.css';
-import type { Link } from '../../types';
+import type { Link } from '../../types/Link.type';
 
 export function Footer() {
   const links: Link[] = [

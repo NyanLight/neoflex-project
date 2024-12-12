@@ -1,5 +1,5 @@
 import { Button } from '../../ui/Button/Button';
-import type { Link } from '../../types';
+import type { Link } from '../../types/Link.type';
 import classes from './Header.module.css';
 
 export function Header() {
