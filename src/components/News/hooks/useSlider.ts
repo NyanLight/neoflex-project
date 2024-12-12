@@ -36,7 +36,7 @@ export const useSlider = (itemsLength: number) => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [currentIndex, itemsLength]);
+  });
 
   const handlePrev = () => {
     if (currentIndex > 0) setCurrentIndex((prevIndex) => prevIndex - 1);
