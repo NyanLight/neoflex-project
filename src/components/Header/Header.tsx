@@ -29,7 +29,7 @@ export function Header() {
 
   return (
     <header className={classes.header}>
-      <span className={classes.header__textLogo}>NeoBank</span>
+      <Link to={'/'}><span className={classes.header__textLogo}>NeoBank</span></Link>
       <nav>
         <ul className={classes.header__navigation}>
           {links.map((link) => (
