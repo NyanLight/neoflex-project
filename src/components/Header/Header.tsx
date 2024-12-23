@@ -1,28 +1,29 @@
 import { Button } from '../../ui/Button/Button';
 import type { CustomLink } from '../../types/Link.type';
 import classes from './Header.module.css';
+import { Link } from 'react-router';
 
 export function Header() {
   const links: CustomLink[] = [
     {
       key: 1,
       name: 'Credit card',
-      url: 'www.example.com',
+      url: '/loan',
     },
     {
       key: 2,
       name: 'Product',
-      url: 'www.example.com',
+      url: '/product',
     },
     {
       key: 3,
       name: 'Account',
-      url: 'www.example.com',
+      url: '/account',
     },
     {
       key: 4,
       name: 'Resource',
-      url: 'www.example.com',
+      url: '/resource',
     },
   ];
 
@@ -33,7 +34,7 @@ export function Header() {
         <ul className={classes.header__navigation}>
           {links.map((link) => (
             <li key={link.key}>
-              <a href={link.url}>{link.name}</a>
+              <Link to={link.url}>{link.name}</Link>
             </li>
           ))}
         </ul>
