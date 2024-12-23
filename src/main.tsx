@@ -10,6 +10,7 @@ import '@fontsource-variable/nunito-sans/index.css';
 import './index.css';
 import HomePage from './pages/HomePage';
 import { Layout } from './pages/Layout';
+import { Loan } from './pages/Loan';
 
 
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <HomePage />,
       },
+      {
+        path: '/loan',
+        element: <Loan />,
+      }
     ]
   }
 ]);

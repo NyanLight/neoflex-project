@@ -1,8 +1,8 @@
 import classes from './Footer.module.css';
-import type { Link } from '../../types/Link.type';
+import type { CustomLink } from '../../types/Link.type';
 
 export function Footer() {
-  const links: Link[] = [
+  const links: CustomLink[] = [
     { key: 1, name: 'About bank', url: 'example.com' },
     { key: 2, name: 'Ask a Question', url: 'example.com' },
     { key: 3, name: 'Quality of service', url: 'example.com' },

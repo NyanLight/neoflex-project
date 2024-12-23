@@ -1,9 +1,9 @@
 import { Button } from '../../ui/Button/Button';
-import type { Link } from '../../types/Link.type';
+import type { CustomLink } from '../../types/Link.type';
 import classes from './Header.module.css';
 
 export function Header() {
-  const links: Link[] = [
+  const links: CustomLink[] = [
     {
       key: 1,
       name: 'Credit card',
