@@ -55,6 +55,11 @@ input::placeholder {
   font-size: 1.25rem;
 }
 
+.subscription__subscribed {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
 .subscription__btn {
   border: 0;
   background-color: #686df1;
