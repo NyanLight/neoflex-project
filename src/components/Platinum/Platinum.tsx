@@ -35,7 +35,7 @@ export function Platinum() {
             );
           })}
         </div>
-        <Button padding={12} text="Apply for card" />
+        <Button horizontalPadding='1rem' verticalPadding='1rem' borderRadius='8px' text="Apply for card" />
       </div>
       <div className={styles.platinum__card}>
         <img
