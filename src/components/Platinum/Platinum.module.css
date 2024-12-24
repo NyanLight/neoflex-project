@@ -7,6 +7,7 @@
     background: linear-gradient(#cbd5e09a, #feebc8e3);
     font-family: 'Ubuntu', sans-serif;
     border-radius: 26px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.08), 0px 0px 8px 0px rgba(0,0,0,0.08);
 }
 
 
