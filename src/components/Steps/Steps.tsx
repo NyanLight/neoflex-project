@@ -20,20 +20,22 @@ const stepsData: Step[] = [
 ];
 export function Steps() {
   return (
-    <section className={styles.steps}>
+    <section className={styles.section}>
       <h2 className={styles.title}>How to get a card</h2>
+      <div className={styles.steps}>
       {stepsData.map((step) => (
         <div className={styles.step}>
           <div className={styles.step__top}>
-            <div className={styles.number}>{step.number}</div>
+            <div className={styles.step__number}>{step.number}</div>
             <div
-              className={styles.line}
+              className={styles.step__line}
               style={{ width: step.lineWidth }}
             ></div>
           </div>
           <div className={styles.step__bottom}>{step.text}</div>
         </div>
       ))}
+      </div>
     </section>
   );
 }
