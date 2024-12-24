@@ -29,7 +29,7 @@ export function Steps() {
             <div className={styles.step__number}>{step.number}</div>
             <div
               className={styles.step__line}
-              style={{ width: step.lineWidth }}
+              style={{}}
             ></div>
           </div>
           <div className={styles.step__bottom}>{step.text}</div>

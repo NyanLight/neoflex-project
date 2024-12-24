@@ -7,10 +7,11 @@
 
 .steps {
   display: flex;
+  gap: 3.5rem;
 }
 
 .step:first-of-type {
-    margin-right: 4rem;
+    margin-right: 3rem;
 }
 
 .step__top {
@@ -31,6 +32,7 @@
 
 .step__line {
     height: 1px;
+    width: 100%;
     border-top: 1px solid #80808046;
 }
 
@@ -44,11 +46,16 @@
 @media (max-width: 920px) {
     .steps {
         flex-direction: column;
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .step__top {
         flex-direction: column;
+        gap: 1rem;
+    }
+
+    .step__line {
+        max-width: 400px;
     }
 
     .step:first-of-type {
