@@ -59,3 +59,15 @@
 .platinum__info button {
     align-self: flex-start ;
 }
+
+@media (max-width: 920px) {
+    .platinum {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .platinum__info button {
+        align-self: center;
+    }
+    }
+  
