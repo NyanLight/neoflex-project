@@ -1,7 +1,7 @@
+import { Platinum } from "../components/Platinum/Platinum";
+
 export function Loan () {
     return (
-        <div>
-            Hello!
-        </div>
+        <Platinum />
     )
 }
