@@ -29,8 +29,8 @@ export function Platinum() {
           {features.map((feature) => {
             return (
               <div className={styles.platinum__feature} key={feature.key}>
-                <div className="feature__title">{feature.title}</div>
-                <div className="feature__regular">{feature.regular}</div>
+                <div className={styles.feature__title}>{feature.title}</div>
+                <div className={styles.feature__regular}>{feature.regular}</div>
               </div>
             );
           })}
