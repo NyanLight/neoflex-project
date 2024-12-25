@@ -4,8 +4,8 @@ import { AboutTab } from '../tabs/AboutTab'
 import { ConditionsTab } from '../tabs/ConditionsTab'
 import { CashbackTab } from '../tabs/CashbackTab';
 import { FAQTab } from '../tabs/FAQTab/FAQTab';
+import { conditionsData, titles } from './constants';
 
-const titles = ['About card', 'Rates and conditions', 'Cashback', 'FAQ'];
 
 
 export function TabbedContent() {
@@ -13,7 +13,7 @@ export function TabbedContent() {
         <section className={styles.tabbed}>
             <Tabs tabsTitles={titles}>
                 <AboutTab />
-                <ConditionsTab />
+                <ConditionsTab conditions={conditionsData} />
                 <CashbackTab />
                 <FAQTab />
             </Tabs>

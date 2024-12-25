@@ -1,7 +1,18 @@
-// import styles from './ConditionsTab.module.css'
+import styles from './ConditionsTab.module.css';
+import { ConditionsProps } from './ConditionsTab.types';
 
-export function ConditionsTab() {
-    return (
-        <div>Hi, Im conditions tab!</div>
-    )
+export function ConditionsTab({ conditions }: { conditions: ConditionsProps }) {
+  return (
+    <div className={styles.conditions}>
+      {conditions.map((condition) => (
+        <div className={styles.condition}>
+          <div className={styles.condition__title}>{condition.title}</div>
+          <div className={styles.condition__descriptions}>
+            <div className={styles.description}>{condition.description}</div>
+            {condition.secondDescription ? <div>{condition.secondDescription}</div> : null}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
