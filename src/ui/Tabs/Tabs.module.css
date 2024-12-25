@@ -22,4 +22,5 @@
 
 .content__active {
     display: block;
+    padding: 3rem 0;
 }

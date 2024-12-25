@@ -1,9 +1,11 @@
 import styles from './TabbedContent.module.css'
 import { Tabs } from '../../ui/Tabs'
-import { AboutTab } from '../AboutTab'
-import { ConditionsTab } from '../ConditionsTab'
+import { AboutTab } from '../tabs/AboutTab'
+import { ConditionsTab } from '../tabs/ConditionsTab'
+import { CashbackTab } from '../tabs/CashbackTab';
+import { FAQTab } from '../tabs/FAQTab/FAQTab';
 
-const titles = ['About', 'Conditions'];
+const titles = ['About card', 'Rates and conditions', 'Cashback', 'FAQ'];
 
 
 export function TabbedContent() {
@@ -12,6 +14,8 @@ export function TabbedContent() {
             <Tabs tabsTitles={titles}>
                 <AboutTab />
                 <ConditionsTab />
+                <CashbackTab />
+                <FAQTab />
             </Tabs>
         </section>
     )
