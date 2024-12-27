@@ -5,6 +5,7 @@ import { ConditionsTab } from '../tabs/ConditionsTab'
 import { CashbackTab } from '../tabs/CashbackTab';
 import { FAQTab } from '../tabs/FAQTab/FAQTab';
 import { conditionsData, titles } from './constants';
+import { cashbackData } from '../tabs/CashbackTab/constants';
 
 
 
@@ -14,7 +15,7 @@ export function TabbedContent() {
             <Tabs tabsTitles={titles}>
                 <AboutTab />
                 <ConditionsTab conditions={conditionsData} />
-                <CashbackTab />
+                <CashbackTab cards={cashbackData} />
                 <FAQTab />
             </Tabs>
         </section>

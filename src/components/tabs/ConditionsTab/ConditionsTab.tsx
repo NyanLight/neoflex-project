@@ -1,5 +1,5 @@
 import styles from './ConditionsTab.module.css';
-import { ConditionsProps } from './ConditionsTab.types';
+import { ConditionsProps } from './types/ConditionsProps.type';
 
 export function ConditionsTab({ conditions }: { conditions: ConditionsProps }) {
   return (

@@ -4,4 +4,3 @@ export type Condition = {
     secondDescription?: string
 }
 
-export type ConditionsProps = Condition[];

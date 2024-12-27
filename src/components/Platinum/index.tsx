@@ -1,0 +1,1 @@
+export { Platinum } from './Platinum'

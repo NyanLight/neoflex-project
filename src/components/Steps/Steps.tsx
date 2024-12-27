@@ -1,4 +1,4 @@
-import { Step } from './Steps.type';
+import { Step } from './types/Step.type';
 import styles from './Steps.module.css';
 
 const stepsData: Step[] = [

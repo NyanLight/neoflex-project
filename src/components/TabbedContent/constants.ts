@@ -1,4 +1,4 @@
-import { ConditionsProps } from "../tabs/ConditionsTab/ConditionsTab.types";
+import { ConditionsProps } from "../tabs/ConditionsTab/types/Condition.type";
 
 export const titles = ['About card', 'Rates and conditions', 'Cashback', 'FAQ'];
 
