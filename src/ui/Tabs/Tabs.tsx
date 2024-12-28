@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export function Tabs({children, tabsTitles} : {children: React.JSX.Element[], tabsTitles: string[]}) {
 
-    const [selectedTab, setSelectedTab] = useState(1);
+    const [selectedTab, setSelectedTab] = useState(0);
 
 
     const selectTab = (index: number) => {
