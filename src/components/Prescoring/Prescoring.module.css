@@ -5,6 +5,63 @@
     background-color: white;
     border-radius: 28px;
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.08), 0px 2px 4px 0px rgba(0,0,0,0.2);
+    font-family: "Ubuntu", sans-serif;
+}
+
+.top__leftSide {
+    width: 50%;
+}
+
+.leftSide__inputField {
+    border: 1px solid #5B35D5;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.inputField__title {
+    margin-bottom: 1.25rem;
+}
+
+.inputField__selectedAmount {
+    font-weight: 500;
+    margin-bottom: 0.625rem;
+}
+
+.rightSide__amount {
+    font-weight: 500;
+    margin-bottom: 0.625rem;
+}
+
+.inputField__minmax {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(120, 109, 109, 1);
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    margin-bottom: 1.75rem;
+}
+
+
+.range {
+    width: 100%;
+    height: 2px;
+    outline: #E2E8F0;
+    margin-bottom: 0.5rem;
+    accent-color: rgba(91, 53, 213, 1);
+}
+
+.leftSide__infoField {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rightSide__title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .contact {
@@ -12,7 +69,7 @@
 }
 
 .contact__title {
-    font-family: "Ubuntu", sans-serif;
+    
     font-weight: bold;
     font-size: 1.25rem;
     margin-bottom: 1.625rem;

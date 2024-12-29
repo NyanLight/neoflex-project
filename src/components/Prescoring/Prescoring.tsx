@@ -4,10 +4,25 @@ import { Select } from '../../ui/Select'
 import { FormFields } from './types/FormFields.type'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import styles from './Prescoring.module.css'
+import { Divider } from '../../ui/Divider'
+import { SetStateAction, useState } from 'react'
 
 export function Prescoring () {
 
+    const [ amount, setAmount] = useState<number>(0);
     const { register, handleSubmit } = useForm<FormFields>();
+
+    const handleChange = (e: { target: { value: SetStateAction<number> } }) => {
+        setAmount(e.target.value);
+        addSpace(amount);
+    }
+
+    function addSpace(number: number) {
+        const string = number.toString();
+        return string.slice(0, -3) + " " + string.slice(-3);
+    }
+
+    const displayingAmount: string = addSpace(amount);
 
     const onSubmit: SubmitHandler<FormFields> = (data) => {
         console.log(data);
@@ -16,6 +31,31 @@ export function Prescoring () {
     return (
         <section className={styles.prescoring} id='prescoring'>
             <form action='' onSubmit={handleSubmit(onSubmit)}>
+                <div className={styles.top}>
+                    <div className={styles.top__leftSide}>
+                        <div className={styles.leftSide__infoField}>
+                            <h2 className={styles.leftSide__title}>Customize your card</h2>
+                            <div className={styles.leftSide__steps}>Step 1 of 5</div>
+                        </div>
+                        <div className={styles.leftSide__inputField}>
+                           <h3 className={styles.inputField__title}>Select amount</h3>
+                           <div className={styles.inputField__selectedAmount}>{displayingAmount}</div>
+                           <input name='amount' className={styles.range} type="range" min={15000} max={600000} step={1000} onChange={handleChange}/> 
+                           <div className={styles.inputField__minmax}>
+                            <div className={styles.inputField__min}>15 000</div>
+                            <div className={styles.inputField__max}>600 000</div>
+                           </div>
+                        </div>
+                    </div>
+                    <Divider direction='vertical' borderWidth='2px' borderStyle='dashed' borderColor='rgba(128, 128, 128, 0.4)' />
+                    <div className={styles.top__rightSide}>
+                        <h3 className={styles.rightSide__title}>You have chosen the amount</h3>
+                        <div className={styles.rightSide__amount}>{displayingAmount} ₽</div>
+                        <div className={styles.rightSide__divider}>
+                            <Divider direction='horizontal' borderColor='rgba(128, 128, 128, 0.2)' borderWidth='1px' borderStyle='solid' />
+                        </div>
+                    </div>
+                </div>
                 <div className={styles.contact}>
                     <h3 className={styles.contact__title}>Contact information</h3>
                     <div className={styles.contact__inputs}>
