@@ -3,6 +3,11 @@ import styles from './Platinum.module.css';
 import { Feature } from './Platinum.types';
 import { Tooltip } from '../../ui/Tooltip';
 
+const clickHandler = () => {
+  const prescoring = document.getElementById('prescoring');
+  prescoring?.scrollIntoView({behavior: 'smooth'});
+}
+
 const features: Feature[] = [
   { key: 0, title: 'Up to 160 days', regular: 'No percent',
     tooltip: "When repaying the full debt up to 160 days."
@@ -42,7 +47,7 @@ export function Platinum() {
             );
           })}
         </div>
-        <Button horizontalPadding='1rem' verticalPadding='1rem' borderRadius='8px' text="Apply for card" />
+        <Button horizontalPadding='1rem' verticalPadding='1rem' borderRadius='8px' text="Apply for card" handler={clickHandler} />
       </div>
       <div className={styles.platinum__card}>
         <img

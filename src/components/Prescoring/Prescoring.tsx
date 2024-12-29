@@ -14,7 +14,7 @@ export function Prescoring () {
     }
 
     return (
-        <section className={styles.prescoring}>
+        <section className={styles.prescoring} id='prescoring'>
             <form action='' onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.contact}>
                     <h3 className={styles.contact__title}>Contact information</h3>
