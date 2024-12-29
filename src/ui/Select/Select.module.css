@@ -1,7 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .select {
     background-color: #F9F5E3;
     font-family: "Ubuntu", sans-serif;
-    color: #808080;
+    color: #000000;
     font-size: 0.875rem;
     padding: 0.8125rem 1rem;
     border-radius: 6px;

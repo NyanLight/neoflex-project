@@ -6,5 +6,6 @@ export interface InputProps<T extends FieldValues> {
     register: UseFormRegister<T>;
     rules?: Record<string, unknown>; 
     error?: FieldError;
+    placeholder?: string;
     required: boolean; 
   }

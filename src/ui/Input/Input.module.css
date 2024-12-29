@@ -1,9 +1,25 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .input {
     background-color: #F9F5E3;
     font-family: "Ubuntu", sans-serif;
-    color: #808080;
-    font-size: 0.875rem;
+    font-size: 1rem;
+    font-weight: 400;
     padding: 0.8125rem 1rem;
     border-radius: 6px;
-    border: solid 1px    rgba(128, 128, 128, 0.2);
+    outline: solid 1px rgba(128, 128, 128, 0.2);
+}
+
+.input:focus {  
+    border: solid 2px #5B35D5;
+}
+
+.input::placeholder {
+    color: #808080;
+    font-size: 0.875rem;
+    font-weight: 400;
 }
