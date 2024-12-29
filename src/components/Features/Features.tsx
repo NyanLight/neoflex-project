@@ -1,13 +1,8 @@
+import { liContent } from './constants';
 import classes from './Features.module.css';
 
 export function Features() {
-  const liContent: { key: number; text: string }[] = [
-    { key: 1, text: 'Powerfull online protection.' },
-    { key: 2, text: 'Cashback without borders.' },
-    { key: 3, text: 'Personal desgin' },
-    { key: 4, text: 'Work anywhere in the world' },
-  ];
-
+  
   return (
     <section className={classes.features}>
       <img src="src/assets/guy.png" className={classes.features__guy} />
