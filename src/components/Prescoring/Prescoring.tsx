@@ -30,7 +30,7 @@ export function Prescoring () {
                     </div>
                 </div>
                 <div className={styles.submit}>
-                    <Button text='Continue' borderRadius='8px' verticalPadding='1rem' horizontalPadding='2rem' />
+                    <Button text='Continue' borderRadius='8px' verticalPadding='1rem' horizontalPadding='2rem' handler={() => {return}}/>
                 </div>
             </form>
         </section>
