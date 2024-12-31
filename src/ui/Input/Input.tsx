@@ -19,6 +19,7 @@ export const Input = <T extends FieldValues>({
         id={name}
         {...register(name, rules)}
         {...inputProps}
+        
         className={styles.input}
       />
       {error && (

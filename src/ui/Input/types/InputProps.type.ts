@@ -7,6 +7,7 @@ export interface InputProps<T extends FieldValues> {
     register: UseFormRegister<T>;
     rules?: Record<string, unknown>; 
     error?: FieldError;
+    style?: React.CSSProperties;
     placeholder?: string;
     required: boolean; 
   }

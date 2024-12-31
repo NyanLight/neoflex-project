@@ -95,24 +95,24 @@ export function Prescoring() {
                   type="text"
                   required={true}
                   register={register}
+                  error={errors.lastName}
                   name="lastName"
                   label="Your last name"
                   placeholder="For Example Doe"
                   rules={{ required: 'Enter your last name' }}
                 />
-                {errors.lastName && <div className={styles.input__error}>{errors.lastName.message}</div>}
             </div>
             <div className={styles.input}>
                 <Input
                   type="text"
                   required={true}
                   register={register}
+                  error={errors.firstName}
                   name="firstName"
                   label="Your first name"
                   placeholder="For Example John"
                   rules={{ required: 'Enter your first name' }}
                 />
-                {errors.firstName && <div className={styles.input__error}>{errors.firstName.message}</div>}
             </div>
             <Input
               type="text"
@@ -137,6 +137,7 @@ export function Prescoring() {
                   register={register}
                   name="email"
                   label="Your email"
+                  error={errors.email}
                   placeholder="test@gmail.com"
                   rules={{
                     required: 'Field is required',
@@ -147,7 +148,6 @@ export function Prescoring() {
                     },
                   }}
                 />
-                {errors.email && <div className={styles.input__error}>{errors.email.message}</div>}
             </div>
             <div className={styles.input}>
                 <Input
@@ -156,19 +156,20 @@ export function Prescoring() {
                   register={register}
                   name="birthdate"
                   label="Your date of birth"
+                  error={errors.birthdate}
                   placeholder="Select Date and Time"
                   rules={{
                     required: 'Enter your date of birth',
                     validate: (value: Date) => validateAge(value),
                   }}
                 />
-                {errors.birthdate && <div className={styles.input__error}>{errors.birthdate.message}</div>}
             </div>
             <div className={styles.input}>
                 <Input
                   type="number"
                   required={true}
                   register={register}
+                  error={errors.passportSeries}
                   name="passportSeries"
                   label="Your passport series"
                   placeholder="0000"
@@ -179,13 +180,13 @@ export function Prescoring() {
                     }
                    }}
                 />
-                {errors.passportSeries && <div className={styles.input__error}>{errors.passportSeries.message}</div>}
             </div>
             <div className={styles.input}>
                 <Input
                   type="number"
                   required={true}
                   register={register}
+                  error={errors.passportNumber}
                   name="passportNumber"
                   label="Your passport number"
                   placeholder="000000"
@@ -196,7 +197,6 @@ export function Prescoring() {
                     }
                   }}
                 />
-                {errors.passportNumber && <div className={styles.input__error}>{errors.passportNumber.message}</div>}
             </div>
           </div>
         </div>
