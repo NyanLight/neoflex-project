@@ -24,9 +24,13 @@ input::-webkit-inner-spin-button {
 }
 
 
-
 .input::placeholder {
     color: #808080;
     font-size: 0.875rem;
     font-weight: 400;
+}
+
+.error {
+    color: #FF5631;
+    font-weight: 500;
 }
