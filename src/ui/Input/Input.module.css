@@ -23,6 +23,8 @@ input::-webkit-inner-spin-button {
     border: solid 2px #5B35D5;
 }
 
+
+
 .input::placeholder {
     color: #808080;
     font-size: 0.875rem;
