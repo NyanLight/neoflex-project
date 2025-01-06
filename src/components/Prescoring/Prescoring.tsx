@@ -5,21 +5,20 @@ import { FormFields } from './types/FormFields.type';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from './Prescoring.module.css';
 import { Divider } from '../../ui/Divider';
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { selectOptions } from './constants';
 
 export function Prescoring() {
-  const [amount, setAmount] = useState<number>(0);
+  const [amount, setAmount] = useState<string>('0');
   const { register, handleSubmit, formState: { errors } } = useForm<FormFields>();
 
-  const handleChange = (e: { target: { value: SetStateAction<number> } }) => {
-    setAmount(e.target.value);
-    addSpace(amount);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newAmount = addSpace(e.target.value);
+    setAmount(newAmount);
   };
 
-  function addSpace(number: number) {
-    const string = number.toString();
-    return string.slice(0, -3) + ' ' + string.slice(-3);
+  function addSpace(rangeValue: string) {
+    return rangeValue.slice(0, -3) + ' ' + rangeValue.slice(-3);
   }
 
   function validateAge(date: Date) {
@@ -94,6 +93,7 @@ export function Prescoring() {
                 <Input
                   type="text"
                   required={true}
+                  style={errors.lastName && {border: '2px solid #FF5631'}}
                   register={register}
                   error={errors.lastName}
                   name="lastName"
@@ -107,6 +107,7 @@ export function Prescoring() {
                   type="text"
                   required={true}
                   register={register}
+                  style={errors.lastName && {border: '2px solid #FF5631'}}
                   error={errors.firstName}
                   name="firstName"
                   label="Your first name"
@@ -135,6 +136,7 @@ export function Prescoring() {
                   type="email"
                   required={true}
                   register={register}
+                  style={errors.lastName && {border: '2px solid #FF5631'}}
                   name="email"
                   label="Your email"
                   error={errors.email}
@@ -154,6 +156,7 @@ export function Prescoring() {
                   type="date"
                   required={true}
                   register={register}
+                  style={errors.lastName && {border: '2px solid #FF5631'}}
                   name="birthdate"
                   label="Your date of birth"
                   error={errors.birthdate}
@@ -169,6 +172,7 @@ export function Prescoring() {
                   type="number"
                   required={true}
                   register={register}
+                  style={errors.lastName && {border: '2px solid #FF5631'}}
                   error={errors.passportSeries}
                   name="passportSeries"
                   label="Your passport series"
@@ -186,6 +190,7 @@ export function Prescoring() {
                   type="number"
                   required={true}
                   register={register}
+                  style={errors.lastName && {border: '2px solid #FF5631'}}
                   error={errors.passportNumber}
                   name="passportNumber"
                   label="Your passport number"
