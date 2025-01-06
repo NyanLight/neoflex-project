@@ -10,7 +10,11 @@ import { selectOptions } from './constants';
 
 export function Prescoring() {
   const [amount, setAmount] = useState<string>('0');
-  const { register, handleSubmit, formState: { errors } } = useForm<FormFields>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormFields>();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = addSpace(e.target.value);
@@ -90,30 +94,30 @@ export function Prescoring() {
           <h3 className={styles.contact__title}>Contact information</h3>
           <div className={styles.contact__inputs}>
             <div className={styles.input}>
-                <Input
-                  type="text"
-                  required={true}
-                  style={errors.lastName && {border: '2px solid #FF5631'}}
-                  register={register}
-                  error={errors.lastName}
-                  name="lastName"
-                  label="Your last name"
-                  placeholder="For Example Doe"
-                  rules={{ required: 'Enter your last name' }}
-                />
+              <Input
+                type="text"
+                required={true}
+                style={errors.lastName && { border: '2px solid #FF5631' }}
+                register={register}
+                error={errors.lastName}
+                name="lastName"
+                label="Your last name"
+                placeholder="For Example Doe"
+                rules={{ required: 'Enter your last name' }}
+              />
             </div>
             <div className={styles.input}>
-                <Input
-                  type="text"
-                  required={true}
-                  register={register}
-                  style={errors.lastName && {border: '2px solid #FF5631'}}
-                  error={errors.firstName}
-                  name="firstName"
-                  label="Your first name"
-                  placeholder="For Example John"
-                  rules={{ required: 'Enter your first name' }}
-                />
+              <Input
+                type="text"
+                required={true}
+                register={register}
+                style={errors.firstName && { border: '2px solid #FF5631' }}
+                error={errors.firstName}
+                name="firstName"
+                label="Your first name"
+                placeholder="For Example John"
+                rules={{ required: 'Enter your first name' }}
+              />
             </div>
             <Input
               type="text"
@@ -132,76 +136,78 @@ export function Prescoring() {
               rules={{ required: true }}
             />
             <div className={styles.input}>
-                <Input
-                  type="email"
-                  required={true}
-                  register={register}
-                  style={errors.lastName && {border: '2px solid #FF5631'}}
-                  name="email"
-                  label="Your email"
-                  error={errors.email}
-                  placeholder="test@gmail.com"
-                  rules={{
-                    required: 'Field is required',
-                    pattern: {
-                      value:
-                        /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                      message: 'Incorrect email address',
-                    },
-                  }}
-                />
+              <Input
+                type="email"
+                required={true}
+                register={register}
+                style={errors.email && { border: '2px solid #FF5631'}}
+                name="email"
+                label="Your email"
+                error={errors.email}
+                placeholder="test@gmail.com"
+                rules={{
+                  required: 'Field is required',
+                  pattern: {
+                    value:
+                      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                    message: 'Incorrect email address',
+                  },
+                }}
+              />
             </div>
             <div className={styles.input}>
-                <Input
-                  type="date"
-                  required={true}
-                  register={register}
-                  style={errors.lastName && {border: '2px solid #FF5631'}}
-                  name="birthdate"
-                  label="Your date of birth"
-                  error={errors.birthdate}
-                  placeholder="Select Date and Time"
-                  rules={{
-                    required: 'Enter your date of birth',
-                    validate: (value: Date) => validateAge(value),
-                  }}
-                />
+              <Input
+                type="date"
+                required={true}
+                register={register}
+                style={errors.birthdate && { border: '2px solid #FF5631' }}
+                name="birthdate"
+                label="Your date of birth"
+                error={errors.birthdate}
+                placeholder="Select Date and Time"
+                rules={{
+                  required: 'Enter your date of birth',
+                  validate: (value: Date) => validateAge(value),
+                }}
+              />
             </div>
             <div className={styles.input}>
-                <Input
-                  type="number"
-                  required={true}
-                  register={register}
-                  style={errors.lastName && {border: '2px solid #FF5631'}}
-                  error={errors.passportSeries}
-                  name="passportSeries"
-                  label="Your passport series"
-                  placeholder="0000"
-                  rules={{ required: 'Enter your passport number',
-                    pattern: {
-                        value:  /^[0-9]{4}$/,
-                        message: 'The series must be 4 digits',
-                    }
-                   }}
-                />
+              <Input
+                type="number"
+                required={true}
+                register={register}
+                style={errors.passportSeries && { border: '2px solid #FF5631' }}
+                error={errors.passportSeries}
+                name="passportSeries"
+                label="Your passport series"
+                placeholder="0000"
+                rules={{
+                  required: 'Enter your passport number',
+                  pattern: {
+                    value: /^[0-9]{4}$/,
+                    message: 'The series must be 4 digits',
+                  },
+                }}
+              />
             </div>
             <div className={styles.input}>
-                <Input
-                  type="number"
-                  required={true}
-                  register={register}
-                  style={errors.lastName && {border: '2px solid #FF5631'}}
-                  error={errors.passportNumber}
-                  name="passportNumber"
-                  label="Your passport number"
-                  placeholder="000000"
-                  rules={{ required: 'Enter your passport number',
-                    pattern: {
-                        value: /^[0-9]{6}$/,
-                        message: 'The series must be 6 digits',
-                    }
-                  }}
-                />
+              <Input
+                type="number"
+                required={true}
+                register={register}
+                style={errors.passportNumber && { border: '2px solid #FF5631' }}
+                error={errors.passportNumber}
+                name="passportNumber"
+                label="Your passport number"
+                placeholder="000000"
+                rules={{
+                  required: 'Enter your passport number',
+                  pattern: {
+                    value: /^[0-9]{6}$/,
+                    message: 'The series must be 6 digits',
+                  },
+                }}
+              />
             </div>
           </div>
         </div>
