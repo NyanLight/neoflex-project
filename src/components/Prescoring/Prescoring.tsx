@@ -6,32 +6,21 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from './Prescoring.module.css';
 import { Divider } from '../../ui/Divider';
 import { useState } from 'react';
-import { selectOptions } from './constants';
+import { invalidStyle, selectOptions, validStyle } from './constants';
+import { addSpace, validateAge } from './utils';
 
 export function Prescoring() {
   const [amount, setAmount] = useState<string>('0');
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, touchedFields, dirtyFields },
   } = useForm<FormFields>();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = addSpace(e.target.value);
     setAmount(newAmount);
   };
-
-  function addSpace(rangeValue: string) {
-    return rangeValue.slice(0, -3) + ' ' + rangeValue.slice(-3);
-  }
-
-  function validateAge(date: Date) {
-    const currentDate = new Date();
-    const birthdate = new Date(date);
-    const difference = currentDate.valueOf() - birthdate.valueOf();
-    const years = difference / 31556952000;
-    return years >= 18 ? null : 'You must be at least 18 years old.';
-  }
 
   const displayingAmount: string = addSpace(amount);
 
@@ -97,7 +86,13 @@ export function Prescoring() {
               <Input
                 type="text"
                 required={true}
-                style={errors.lastName && { border: '2px solid #FF5631' }}
+                style={
+                  touchedFields.lastName || dirtyFields.lastName
+                    ? !errors.lastName
+                      ? validStyle
+                      : invalidStyle
+                    : undefined
+                }
                 register={register}
                 error={errors.lastName}
                 name="lastName"
@@ -111,7 +106,13 @@ export function Prescoring() {
                 type="text"
                 required={true}
                 register={register}
-                style={errors.firstName && { border: '2px solid #FF5631' }}
+                style={
+                  touchedFields.firstName || dirtyFields.firstName
+                    ? !errors.firstName
+                      ? validStyle
+                      : invalidStyle
+                    : undefined
+                }
                 error={errors.firstName}
                 name="firstName"
                 label="Your first name"
@@ -140,7 +141,13 @@ export function Prescoring() {
                 type="email"
                 required={true}
                 register={register}
-                style={errors.email && { border: '2px solid #FF5631'}}
+                style={
+                  touchedFields.email || dirtyFields.email
+                    ? !errors.email
+                      ? validStyle
+                      : invalidStyle
+                    : undefined
+                }
                 name="email"
                 label="Your email"
                 error={errors.email}
@@ -160,7 +167,13 @@ export function Prescoring() {
                 type="date"
                 required={true}
                 register={register}
-                style={errors.birthdate && { border: '2px solid #FF5631' }}
+                style={
+                  touchedFields.birthdate || dirtyFields.birthdate
+                    ? !errors.birthdate
+                      ? undefined
+                      : {border: '2px solid #FF5631'}
+                    : undefined
+                }
                 name="birthdate"
                 label="Your date of birth"
                 error={errors.birthdate}
@@ -176,7 +189,13 @@ export function Prescoring() {
                 type="number"
                 required={true}
                 register={register}
-                style={errors.passportSeries && { border: '2px solid #FF5631' }}
+                style={
+                  touchedFields.passportSeries || dirtyFields.passportSeries
+                    ? !errors.passportSeries
+                      ? validStyle
+                      : invalidStyle
+                    : undefined
+                }
                 error={errors.passportSeries}
                 name="passportSeries"
                 label="Your passport series"
@@ -195,7 +214,13 @@ export function Prescoring() {
                 type="number"
                 required={true}
                 register={register}
-                style={errors.passportNumber && { border: '2px solid #FF5631' }}
+                style={
+                  touchedFields.passportNumber || dirtyFields.passportNumber
+                    ? !errors.passportNumber
+                      ? validStyle
+                      : invalidStyle
+                    : undefined
+                }
                 error={errors.passportNumber}
                 name="passportNumber"
                 label="Your passport number"
