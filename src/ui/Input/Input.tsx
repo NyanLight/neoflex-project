@@ -17,9 +17,10 @@ export const Input = <T extends FieldValues>({
       {label && <Label for={name} required={required} text={label} />}
       <input
         id={name}
+        defaultValue={undefined}
         {...register(name, rules)}
         {...inputProps}
-        
+
         className={styles.input}
       />
       {error && (
