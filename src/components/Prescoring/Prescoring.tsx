@@ -38,7 +38,7 @@ export function Prescoring() {
 
   return (
     <section className={styles.prescoring} id="prescoring">
-      <form action="" onSubmit={handleSubmit(onSubmit)}>
+      <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.top}>
           <div className={styles.top__leftSide}>
             <div className={styles.leftSide__infoField}>
