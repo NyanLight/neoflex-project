@@ -7,7 +7,7 @@ export function CashbackTab({cards}: {cards: cardInfo[]}) {
     return (
         <div className={styles.cards}>
             {cards.map((card, index) => (
-                <CashbackCard color={(index % 2 === 0) ? 'rgba(234, 236, 238, 1)' : 'rgba(136, 179, 184, 0.6)'} title={card.title} description={card.description} />
+                <CashbackCard key={index} color={(index % 2 === 0) ? 'rgba(234, 236, 238, 1)' : 'rgba(136, 179, 184, 0.6)'} title={card.title} description={card.description} />
             ))}
         </div>
     )

@@ -8,8 +8,8 @@ export function Steps() {
     <section className={styles.section}>
       <h2 className={styles.title}>How to get a card</h2>
       <div className={styles.steps}>
-        {stepsData.map((step) => (
-          <div className={styles.step}>
+        {stepsData.map((step, index) => (
+          <div className={styles.step} key={index}>
             <div className={styles.step__top}>
               <div className={styles.step__number}>{step.number}</div>
               <Divider

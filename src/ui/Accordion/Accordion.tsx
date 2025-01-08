@@ -19,7 +19,7 @@ export function Accordion({data}: {data: AccordionProps}) {
   return (
     <div className={styles.accordion}>
       {data.map((item, index) => (
-        <div className={styles.accordion__item} onClick={() => toggle(index)}>
+        <div key={index} className={styles.accordion__item} onClick={() => toggle(index)}>
           <div className={styles.item__title}>
             <h2 className={styles.title__text}>{item.title}</h2>
             <div className={styles.title__icon}><img src="src/assets/accordion_vector.png" className={selected === index ? styles.title__icon : styles.icon__closed} alt="" /></div>

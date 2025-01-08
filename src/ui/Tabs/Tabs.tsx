@@ -14,13 +14,13 @@ export function Tabs({children, tabsTitles} : {children: React.JSX.Element[], ta
         <div className={styles.container}>
             <nav className={styles.tabs}>
                 {tabsTitles.map((title, index) => (
-                    <div className={selectedTab === index ? `${styles.tab} ${styles.tab__active}` : styles.tab } onClick={() => selectTab(index)}>{title}</div>
+                    <div key={index} className={selectedTab === index ? `${styles.tab} ${styles.tab__active}` : styles.tab } onClick={() => selectTab(index)}>{title}</div>
                 ))}
             </nav>
 
             <div className={styles.contents}>
                 {children.map((child, index) => (
-                    <div className={selectedTab === index ? `${styles.content__active}` : styles.content}>{child}</div>
+                    <div key={index} className={selectedTab === index ? `${styles.content__active}` : styles.content}>{child}</div>
                 ))}
             </div>
         </div>
