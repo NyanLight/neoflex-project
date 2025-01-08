@@ -133,6 +133,13 @@ export function Prescoring() {
               required={false}
               register={register}
               name="middleName"
+              style={
+                touchedFields.middleName || dirtyFields.middleName
+                  ? !errors.middleName
+                    ? validStyle
+                    : invalidStyle
+                  : undefined
+              }
               label="Your patronymic"
               placeholder="For Example Victorovich"
             />
