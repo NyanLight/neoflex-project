@@ -16,7 +16,7 @@ export function Prescoring() {
     register,
     handleSubmit,
     formState: { errors, touchedFields, dirtyFields, isSubmitting },
-  } = useForm<FormFields>({ defaultValues: { middleName: null } });
+  } = useForm<FormFields>({mode: 'onTouched'});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = addSpace(e.target.value);
