@@ -8,13 +8,14 @@ import { Divider } from '../../ui/Divider';
 import { useState } from 'react';
 import { invalidStyle, selectOptions, validStyle } from './constants';
 import { addSpace, validateAge } from './utils';
+import { Loader } from '../../ui/Loader';
 
 export function Prescoring() {
   const [amount, setAmount] = useState<string>('0');
   const {
     register,
     handleSubmit,
-    formState: { errors, touchedFields, dirtyFields },
+    formState: { errors, touchedFields, dirtyFields, isSubmitting},
   } = useForm<FormFields>({defaultValues: {middleName: null}});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

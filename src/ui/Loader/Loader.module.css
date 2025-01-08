@@ -1,0 +1,15 @@
+.loader {
+  animation: 1s infinite ease-in-out forwards spinning ;
+}
+
+@keyframes spinning {
+
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+  
+}
