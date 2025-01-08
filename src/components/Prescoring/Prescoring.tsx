@@ -15,8 +15,8 @@ export function Prescoring() {
   const {
     register,
     handleSubmit,
-    formState: { errors, touchedFields, dirtyFields, isSubmitting},
-  } = useForm<FormFields>({defaultValues: {middleName: null}});
+    formState: { errors, touchedFields, dirtyFields, isSubmitting },
+  } = useForm<FormFields>({ defaultValues: { middleName: null } });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newAmount = addSpace(e.target.value);
@@ -25,15 +25,15 @@ export function Prescoring() {
 
   const displayingAmount: string = addSpace(amount);
 
-   const onSubmit: SubmitHandler<FormFields> =  async (data: FormFields)  => {
-    if (!data.middleName) data.middleName = null; 
+  const onSubmit: SubmitHandler<FormFields> = async (data: FormFields) => {
+    if (!data.middleName) data.middleName = null;
     await fetch('http://localhost:8080/application', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data)
-    })
+      body: JSON.stringify(data),
+    });
   };
 
   return (
@@ -179,7 +179,7 @@ export function Prescoring() {
                   touchedFields.birthdate || dirtyFields.birthdate
                     ? !errors.birthdate
                       ? undefined
-                      : {border: '2px solid #FF5631'}
+                      : { border: '2px solid #FF5631' }
                     : undefined
                 }
                 name="birthdate"
@@ -245,15 +245,22 @@ export function Prescoring() {
           </div>
         </div>
         <div className={styles.submit}>
-          <Button
-            text="Continue"
-            borderRadius="8px"
-            verticalPadding="1rem"
-            horizontalPadding="2rem"
-            handler={() => {
-              return;
-            }}
-          />
+          {!isSubmitting ? (
+            <>
+            <Loader isDisplaying={false} />  
+            <Button
+              text="Continue"
+              borderRadius="8px"
+              verticalPadding="1rem"
+              horizontalPadding="2rem"
+              handler={() => {
+                return;
+              }}
+            />
+            </>)
+             : (
+            <Loader isDisplaying={true} />
+          )}
         </div>
       </form>
     </section>
