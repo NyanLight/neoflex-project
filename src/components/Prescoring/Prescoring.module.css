@@ -51,6 +51,10 @@
 }
 
 
+.rightSide__divider {
+    width: 80%;
+}
+
 .range {
     width: 100%;
     height: 2px;
@@ -70,6 +74,7 @@
 .contact {
     margin-bottom: 1.5rem;
 }
+
 
 .contact__title {
     
