@@ -6,7 +6,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from './Prescoring.module.css';
 import { Divider } from '../../ui/Divider';
 import { useState } from 'react';
-import { invalidStyle, selectOptions, validStyle } from './constants';
+import {  invalidStyle, selectOptions, validStyle } from './constants';
 import { addSpace, validateAge } from './utils';
 import { Loader } from '../../ui/Loader';
 
