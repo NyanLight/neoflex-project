@@ -11,13 +11,14 @@ import './index.css';
 import HomePage from './pages/HomePage';
 import { Layout } from './pages/Layout';
 import { Loan } from './pages/Loan';
+import { NotFound } from './components/NotFound/NotFound';
 
 
 
 const router = createBrowserRouter([
   {
     element: <Layout/>,
-    errorElement: <div>404 Not Found</div>,
+    errorElement: <NotFound />,
     children: [
       {
         path: '/',
