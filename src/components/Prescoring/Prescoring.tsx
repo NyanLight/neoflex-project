@@ -18,8 +18,8 @@ import { Loader } from '../../ui/Loader';
 
 export function Prescoring() {
   const currentStyle = (name: string) => {
-    if (errors[name]) return invalidStyle;
-    if (touchedFields[name] | dirtyFields[name]) return validStyle;
+    if (errors[name as keyof object]) return invalidStyle;
+    if (touchedFields[name as keyof object] | dirtyFields[name as keyof object ]) return validStyle;
     return undefined;
   };
   const [amount, setAmount] = useState<string>('0');
@@ -111,7 +111,7 @@ export function Prescoring() {
                   label={input.label}
                   placeholder={input.placeholder}
                   rules={input.rules}
-                  error={errors[input.name]}
+                  error={errors[input.name as keyof object]}
                   style={currentStyle(input.name)}
                 />
               </div>
@@ -134,7 +134,7 @@ export function Prescoring() {
                   label={input.label}
                   placeholder={input.placeholder}
                   rules={input.rules}
-                  error={errors[input.name]}
+                  error={errors[input.name as keyof object]}
                   style={currentStyle(input.name)}
                 />
               </div>
