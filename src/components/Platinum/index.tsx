@@ -1,1 +1,1 @@
-export { Platinum } from './Platinum'
+export { Platinum } from './Platinum';

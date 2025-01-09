@@ -1,1 +1,1 @@
-export { AboutTab } from './AboutTab'
+export { AboutTab } from './AboutTab';

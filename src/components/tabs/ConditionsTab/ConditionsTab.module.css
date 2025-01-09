@@ -1,26 +1,26 @@
 .condition {
-    width: 80%;
-    display: flex;
-    border-bottom: 1px solid #7F92AC;
-    font-family: "Ubuntu", sans-serif;
-    padding: 1.5rem 0;
-    gap: 4.3rem;
+  width: 80%;
+  display: flex;
+  border-bottom: 1px solid #7f92ac;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 1.5rem 0;
+  gap: 4.3rem;
 }
 
 .condition:first-of-type {
-    padding-top: 0;
+  padding-top: 0;
 }
 
 .condition:last-of-type {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .condition__title {
-    width: 25%;
-    font-weight: 500;
+  width: 25%;
+  font-weight: 500;
 }
 
 .condition__description {
-    color: #434343;
-    font-weight: 500;
+  color: #434343;
+  font-weight: 500;
 }

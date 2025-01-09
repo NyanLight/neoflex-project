@@ -1,1 +1,1 @@
-export { AboutCard } from './AboutCard'
+export { AboutCard } from './AboutCard';

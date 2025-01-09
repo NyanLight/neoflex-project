@@ -1,25 +1,25 @@
 .tooltip__container {
-    position: relative;
+  position: relative;
 }
 
 .tooltip__children {
-    position: relative;
-} 
-
-.tooltip__text {
-    position: absolute;
-    color: white;
-    top: 1.5rem;
-    left: -1rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 8px;
-    background-color: #3D3D3D;
-    visibility: hidden;
-    opacity: 0;
+  position: relative;
 }
 
-.tooltip__container:hover .tooltip__text{
-    visibility: visible;
-    opacity: 1;
+.tooltip__text {
+  position: absolute;
+  color: white;
+  top: 1.5rem;
+  left: -1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 8px;
+  background-color: #3d3d3d;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tooltip__container:hover .tooltip__text {
+  visibility: visible;
+  opacity: 1;
 }

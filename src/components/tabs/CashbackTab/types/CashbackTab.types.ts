@@ -1,3 +1,3 @@
-import { CashbackCardData } from "./CashbackCard/types/CashbackCardData.type";
+import { CashbackCardData } from './CashbackCard/types/CashbackCardData.type';
 
-export type cardInfo = Omit <CashbackCardData, 'color'>;
+export type cardInfo = Omit<CashbackCardData, 'color'>;

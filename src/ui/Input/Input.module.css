@@ -1,17 +1,17 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .input {
-    background-color: #F9F5E3;
-    font-family: "Ubuntu", sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    padding: 0.8125rem 1rem;
-    border-radius: 6px;
-    outline: solid 1px rgba(128, 128, 128, 0.2);
+  background-color: #f9f5e3;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.8125rem 1rem;
+  border-radius: 6px;
+  outline: solid 1px rgba(128, 128, 128, 0.2);
 }
 
 input::-webkit-outer-spin-button,
@@ -20,20 +20,17 @@ input::-webkit-inner-spin-button {
   display: none;
 }
 
-.input:focus {  
-    border: solid 2px #5B35D5;
+.input:focus {
+  border: solid 2px #5b35d5;
 }
-
 
 .input::placeholder {
-    color: #808080;
-    font-size: 0.875rem;
-    font-weight: 400;
+  color: #808080;
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
-
-
 .error {
-    color: #FF5631;
-    font-weight: 500;
+  color: #ff5631;
+  font-weight: 500;
 }

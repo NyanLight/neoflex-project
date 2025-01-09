@@ -1,26 +1,26 @@
 .tabs {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    border-bottom: 1px solid #8080801a;
-    font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  border-bottom: 1px solid #8080801a;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .tab {
-    color: #7B7454;
-    font-weight: 500;
-    padding-bottom: 0.5rem;
+  color: #7b7454;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
 }
 
 .tab__active {
-    border-bottom: 2px solid #7B7454;
+  border-bottom: 2px solid #7b7454;
 }
 
 .content {
-    display: none;
+  display: none;
 }
 
 .content__active {
-    display: block;
-    padding: 3rem 0;
+  display: block;
+  padding: 3rem 0;
 }

@@ -1,1 +1,1 @@
-export { CashbackCard} from './CashbackCard'
+export { CashbackCard } from './CashbackCard';

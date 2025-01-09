@@ -1,4 +1,9 @@
-import { FieldError, FieldValues, Path, UseFormRegister } from "react-hook-form";
+import {
+  FieldError,
+  FieldValues,
+  Path,
+  UseFormRegister,
+} from 'react-hook-form';
 
 export interface SelectProps<T extends FieldValues> {
   name: Path<T>;

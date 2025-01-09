@@ -1,6 +1,6 @@
 export type AccordionData = {
-    title: string,
-    description: string,
-}
+  title: string;
+  description: string;
+};
 
-export type AccordionProps = AccordionData[]
+export type AccordionProps = AccordionData[];

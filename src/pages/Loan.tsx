@@ -1,15 +1,15 @@
-import { Platinum } from "../components/Platinum/Platinum";
-import { Prescoring } from "../components/Prescoring";
-import { Steps } from "../components/Steps";
-import { TabbedContent } from "../components/TabbedContent";
+import { Platinum } from '../components/Platinum/Platinum';
+import { Prescoring } from '../components/Prescoring';
+import { Steps } from '../components/Steps';
+import { TabbedContent } from '../components/TabbedContent';
 
-export function Loan () {
-    return (
-        <>
-        <Platinum />
-        <TabbedContent />
-        <Steps />
-        <Prescoring />
-        </>
-    )
+export function Loan() {
+  return (
+    <>
+      <Platinum />
+      <TabbedContent />
+      <Steps />
+      <Prescoring />
+    </>
+  );
 }

@@ -5,8 +5,8 @@ import { features } from './constants';
 
 const clickHandler = () => {
   const prescoring = document.getElementById('prescoring');
-  prescoring?.scrollIntoView({behavior: 'smooth'});
-}
+  prescoring?.scrollIntoView({ behavior: 'smooth' });
+};
 
 export function Platinum() {
   return (
@@ -22,14 +22,22 @@ export function Platinum() {
             return (
               <div className={styles.platinum__feature} key={feature.key}>
                 <div className={styles.feature__title}>{feature.title}</div>
-                <Tooltip text={feature.tooltip} >
-                <div className={styles.feature__regular}>{feature.regular}</div>
+                <Tooltip text={feature.tooltip}>
+                  <div className={styles.feature__regular}>
+                    {feature.regular}
+                  </div>
                 </Tooltip>
               </div>
             );
           })}
         </div>
-        <Button horizontalPadding='1rem' verticalPadding='1rem' borderRadius='8px' text="Apply for card" handler={clickHandler} />
+        <Button
+          horizontalPadding="1rem"
+          verticalPadding="1rem"
+          borderRadius="8px"
+          text="Apply for card"
+          handler={clickHandler}
+        />
       </div>
       <div className={styles.platinum__card}>
         <img

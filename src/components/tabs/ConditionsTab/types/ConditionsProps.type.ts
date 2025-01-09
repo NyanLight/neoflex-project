@@ -1,3 +1,3 @@
-import { Condition } from "./Condition.type";
+import { Condition } from './Condition.type';
 
 export type ConditionsProps = Condition[];

@@ -13,11 +13,9 @@ import { Layout } from './pages/Layout';
 import { Loan } from './pages/Loan';
 import { NotFound } from './components/NotFound/NotFound';
 
-
-
 const router = createBrowserRouter([
   {
-    element: <Layout/>,
+    element: <Layout />,
     errorElement: <NotFound />,
     children: [
       {
@@ -27,9 +25,9 @@ const router = createBrowserRouter([
       {
         path: '/loan',
         element: <Loan />,
-      }
-    ]
-  }
+      },
+    ],
+  },
 ]);
 
 createRoot(document.getElementById('root')!).render(

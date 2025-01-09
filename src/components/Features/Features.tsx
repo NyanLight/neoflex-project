@@ -2,7 +2,6 @@ import { liContent } from './constants';
 import classes from './Features.module.css';
 
 export function Features() {
-  
   return (
     <section className={classes.features}>
       <img src="src/assets/guy.png" className={classes.features__guy} />

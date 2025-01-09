@@ -2,7 +2,6 @@ import classes from './Footer.module.css';
 import { links } from './constants';
 
 export function Footer() {
- 
   return (
     <footer className={classes.footer}>
       <div className={classes.footer__wrapper}>

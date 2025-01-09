@@ -1,1 +1,1 @@
-export { CashbackTab } from './CashbackTab'
+export { CashbackTab } from './CashbackTab';

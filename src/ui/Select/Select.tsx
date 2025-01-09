@@ -1,7 +1,7 @@
-import {FieldValues} from 'react-hook-form';
+import { FieldValues } from 'react-hook-form';
 import { SelectProps } from './types/SelectProps.type';
 import { Label } from '../Label';
-import styles from './Select.module.css'
+import styles from './Select.module.css';
 
 export const Select = <T extends FieldValues>({
   name,
@@ -28,12 +28,7 @@ export const Select = <T extends FieldValues>({
           </option>
         ))}
       </select>
-      {error && (
-        <span className={styles.error}>
-          {error.message}
-        </span>
-      )}
+      {error && <span className={styles.error}>{error.message}</span>}
     </div>
   );
 };
-

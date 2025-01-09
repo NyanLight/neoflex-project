@@ -1,8 +1,8 @@
-import { AboutCardData } from "./types/AboutTabData.type";
+import { AboutCardData } from './types/AboutTabData.type';
 
 export const cardsData: AboutCardData[] = [
   {
-    icon: 'src/assets/money.svg',    
+    icon: 'src/assets/money.svg',
     title: 'Up to 50 000 ₽',
     description: 'Cash and transfers without commission and percent',
   },
@@ -28,5 +28,5 @@ export const cardsData: AboutCardData[] = [
     title: 'Convenient deposit and withdrawal',
     description:
       'At any ATM. Top up your credit card for free with cash or transfer from other cards',
-  }
+  },
 ];

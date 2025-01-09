@@ -1,3 +1,3 @@
-import { AboutCardProps } from "./components/AboutCard/AboutCardProps.type";
+import { AboutCardProps } from './components/AboutCard/AboutCardProps.type';
 
-export type AboutCardData = Omit<AboutCardProps, 'color'>
+export type AboutCardData = Omit<AboutCardProps, 'color'>;

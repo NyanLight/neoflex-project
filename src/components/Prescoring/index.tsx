@@ -1,1 +1,1 @@
-export {Prescoring} from './Prescoring'
+export { Prescoring } from './Prescoring';

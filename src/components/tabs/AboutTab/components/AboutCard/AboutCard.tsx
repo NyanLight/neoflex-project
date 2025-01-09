@@ -1,10 +1,9 @@
 import styles from './AboutCard.module.css';
 import { AboutCardProps } from './AboutCardProps.type';
 
-
 export function AboutCard({ icon, title, description, color }: AboutCardProps) {
   return (
-    <div className={styles.card} style={{backgroundColor: color}}>
+    <div className={styles.card} style={{ backgroundColor: color }}>
       <div className={styles.icon}>
         <img src={icon} alt="" />
       </div>

@@ -1,9 +1,9 @@
 .label {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
-    color: #1A202C;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  color: #1a202c;
 }
 
 .label__star {
-    color: #FF0000
+  color: #ff0000;
 }

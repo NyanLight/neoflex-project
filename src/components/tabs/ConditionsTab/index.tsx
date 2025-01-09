@@ -1,1 +1,1 @@
-export { ConditionsTab } from './ConditionsTab'
+export { ConditionsTab } from './ConditionsTab';

@@ -13,13 +13,14 @@ import {
   selectOptions,
   validStyle,
 } from './constants';
-import { addSpace, } from './utils';
+import { addSpace } from './utils';
 import { Loader } from '../../ui/Loader';
 
 export function Prescoring() {
   const currentStyle = (name: string) => {
     if (errors[name as keyof FormFields]) return invalidStyle;
-    if (touchedFields[name as keyof object] | dirtyFields[name as keyof object ]) return validStyle;
+    if (touchedFields[name as keyof object] | dirtyFields[name as keyof object])
+      return validStyle;
     return undefined;
   };
   const [amount, setAmount] = useState<string>('0');
@@ -41,9 +42,9 @@ export function Prescoring() {
       Object.entries(data).map(([key, value]) => [
         key,
         typeof value === 'string' ? value.replace(/\s+/g, '') : value,
-      ])
+      ]),
     );
-  
+
     if (!spacelessData.middleName) spacelessData.middleName = null;
     await fetch('http://localhost:8080/application', {
       method: 'POST',
@@ -131,7 +132,7 @@ export function Prescoring() {
               options={selectOptions}
               rules={{ required: true }}
             />
-             {inputsSecondPart.map((input, index) => (
+            {inputsSecondPart.map((input, index) => (
               <div className={styles.input} key={index}>
                 <Input
                   name={input.name}

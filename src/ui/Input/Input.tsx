@@ -1,7 +1,7 @@
-import {FieldValues } from 'react-hook-form';
+import { FieldValues } from 'react-hook-form';
 import { InputProps } from './types/InputProps.type';
 import { Label } from '../Label';
-import styles from './Input.module.css'
+import styles from './Input.module.css';
 
 export const Input = <T extends FieldValues>({
   name,
@@ -20,14 +20,9 @@ export const Input = <T extends FieldValues>({
         defaultValue={undefined}
         {...register(name, rules)}
         {...inputProps}
-
         className={styles.input}
       />
-      {error && (
-        <span className={styles.error}>
-          {error.message}
-        </span>
-      )}
+      {error && <span className={styles.error}>{error.message}</span>}
     </div>
   );
 };

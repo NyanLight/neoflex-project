@@ -1,5 +1,5 @@
 export type labelProps = {
-    for: string,
-    text: string,
-    required: boolean
-}
+  for: string;
+  text: string;
+  required: boolean;
+};

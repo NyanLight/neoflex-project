@@ -2,7 +2,6 @@ import styles from './Steps.module.css';
 import { Divider } from '../../ui/Divider';
 import { stepsData } from './constants';
 
-
 export function Steps() {
   return (
     <section className={styles.section}>

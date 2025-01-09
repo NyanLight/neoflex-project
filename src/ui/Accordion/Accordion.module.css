@@ -1,39 +1,38 @@
 .accordion__item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-family: "Ubuntu", sans-serif;
-    border: 1px solid #E2E8F0;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Ubuntu', sans-serif;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
 }
 
 .item__title {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 2rem 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 2rem 0;
 }
 
 .title__text {
-    font-size: 1rem;
-    font-weight:500;
-    color: #1C1C1E;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1c1c1e;
 }
 
-
 .icon__closed {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .item__description {
-    font-weight: 400;
-    color: #7B7454;
-    text-align: left;
-    height: auto;
-    padding: 1rem 2rem 2rem;
+  font-weight: 400;
+  color: #7b7454;
+  text-align: left;
+  height: auto;
+  padding: 1rem 2rem 2rem;
 }
 
 .description__closed {
-    max-height: 0;
-    overflow: hidden;
+  max-height: 0;
+  overflow: hidden;
 }

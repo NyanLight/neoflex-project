@@ -1,6 +1,5 @@
 export type Condition = {
-    title: string,
-    description: string
-    secondDescription?: string
-}
-
+  title: string;
+  description: string;
+  secondDescription?: string;
+};

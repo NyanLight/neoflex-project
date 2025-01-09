@@ -4,10 +4,11 @@ import classes from './Header.module.css';
 import { Link } from 'react-router';
 
 export function Header() {
-  
   return (
     <header className={classes.header}>
-      <Link to={'/'}><span className={classes.header__textLogo}>NeoBank</span></Link>
+      <Link to={'/'}>
+        <span className={classes.header__textLogo}>NeoBank</span>
+      </Link>
       <nav>
         <ul className={classes.header__navigation}>
           {links.map((link) => (
@@ -17,7 +18,15 @@ export function Header() {
           ))}
         </ul>
       </nav>
-      <Button text="Online Bank" verticalPadding='1rem' horizontalPadding='1rem' borderRadius='16px' handler={() => {return}} />
+      <Button
+        text="Online Bank"
+        verticalPadding="1rem"
+        horizontalPadding="1rem"
+        borderRadius="16px"
+        handler={() => {
+          return;
+        }}
+      />
     </header>
   );
 }

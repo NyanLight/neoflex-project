@@ -1,92 +1,92 @@
 .platinum {
-    max-width: 1300px;
-    padding: 3rem 2rem;
-    margin: auto auto 3rem;
-    display: flex;
-    flex-direction: row;
-    background: linear-gradient(#cbd5e09a, #feebc8e3);
-    font-family: 'Ubuntu', sans-serif;
-    border-radius: 26px;
-    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.08), 0px 0px 8px 0px rgba(0,0,0,0.08);
+  max-width: 1300px;
+  padding: 3rem 2rem;
+  margin: auto auto 3rem;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(#cbd5e09a, #feebc8e3);
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 26px;
+  box-shadow:
+    0px 2px 4px 0px rgba(0, 0, 0, 0.08),
+    0px 0px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
-
 .platinum__info {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .platinum__card {
-    margin: auto;
+  margin: auto;
 }
 
 .platinum__title {
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .platinum__description {
-    max-width: 32rem;
-    font-weight: 500;
-    color: #2D3748;
+  max-width: 32rem;
+  font-weight: 500;
+  color: #2d3748;
 }
 
 .platinum__features {
-    display: flex;
-    flex-direction: row;
-    gap: 5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
 }
 
 .platinum__feature {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    color: #3D3D3D;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #3d3d3d;
 }
 
 .feature__title {
-    font-weight: 700;   
-    font-size: 1.25rem;
+  font-weight: 700;
+  font-size: 1.25rem;
 }
 
 .feature__regular {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .platinum__info button {
-    align-self: flex-start ;
+  align-self: flex-start;
 }
 
 @media (max-width: 920px) {
-    .platinum {
-        flex-direction: column;
-        gap: 2rem;
-    }
+  .platinum {
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-    .platinum__info button {
-        align-self: center;
-    }
-    }
+  .platinum__info button {
+    align-self: center;
+  }
+}
 
 @media (max-width: 500px) {
-    .platinum__features {
-        gap: 0.5rem;
-    }
+  .platinum__features {
+    gap: 0.5rem;
+  }
 
-    .platinum__feature {
-        justify-content: space-between;
-        text-align: center;
-    }
+  .platinum__feature {
+    justify-content: space-between;
+    text-align: center;
+  }
 
-    .feature__title {
-        text-align: center;
-    }
-    
-    .platinum__img {
-        max-width: 250px;
-    }
+  .feature__title {
+    text-align: center;
+  }
+
+  .platinum__img {
+    max-width: 250px;
+  }
 }
-  
