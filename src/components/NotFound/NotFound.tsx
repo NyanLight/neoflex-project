@@ -7,7 +7,14 @@ export function NotFound () {
         <>
         <Header />
         <section className={styles.notFound}>
-            404 not found
+            <div className={styles.infoPart}>
+
+            </div>
+            <div className={styles.imagePart}>
+                <div className={styles.imagePart__wrapper}>
+                <img className={styles.imagePart__img} src="src/assets/404.png" alt="" />
+                </div>
+            </div>
         </section> 
         <Footer />
         </>
