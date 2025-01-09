@@ -37,13 +37,20 @@ export function Prescoring() {
   const displayingAmount: string = addSpace(amount);
 
   const onSubmit: SubmitHandler<FormFields> = async (data: FormFields) => {
-    if (!data.middleName) data.middleName = null;
+    const spacelessData = Object.fromEntries(
+      Object.entries(data).map(([key, value]) => [
+        key,
+        typeof value === 'string' ? value.replace(/\s+/g, '') : value,
+      ])
+    );
+  
+    if (!spacelessData.middleName) spacelessData.middleName = null;
     await fetch('http://localhost:8080/application', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(spacelessData),
     });
   };
 
