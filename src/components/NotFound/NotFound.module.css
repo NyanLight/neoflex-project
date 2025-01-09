@@ -1,7 +1,36 @@
+
 .notFound {
     max-width: 1300px;
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.infoPart {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.infoPart h2 {
+    font-size: 1.875rem;
+}
+
+.infoPart__oops {
+    color: #1C1C1E;
+    font-weight: 700;
+}
+
+.infoPart__h2 {
+    color: black;
+    font-weight: 500;
+}
+
+.infoPart__regular {
+    font-weight: 500;
+    color: #4B4B4B;
 }

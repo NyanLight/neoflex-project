@@ -12,7 +12,7 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-h2 + div {
+.features h2 + div {
   margin-bottom: 2rem;
   font-family: 'Ubuntu', sans-serif;
 }
