@@ -18,7 +18,7 @@ import { Loader } from '../../ui/Loader';
 
 export function Prescoring() {
   const currentStyle = (name: string) => {
-    if (errors[name as keyof object]) return invalidStyle;
+    if (errors[name as keyof FormFields]) return invalidStyle;
     if (touchedFields[name as keyof object] | dirtyFields[name as keyof object ]) return validStyle;
     return undefined;
   };
@@ -111,7 +111,7 @@ export function Prescoring() {
                   label={input.label}
                   placeholder={input.placeholder}
                   rules={input.rules}
-                  error={errors[input.name as keyof object]}
+                  error={errors[input.name as keyof FormFields]}
                   style={currentStyle(input.name)}
                 />
               </div>
@@ -134,7 +134,7 @@ export function Prescoring() {
                   label={input.label}
                   placeholder={input.placeholder}
                   rules={input.rules}
-                  error={errors[input.name as keyof object]}
+                  error={errors[input.name as keyof FormFields]}
                   style={currentStyle(input.name)}
                 />
               </div>
