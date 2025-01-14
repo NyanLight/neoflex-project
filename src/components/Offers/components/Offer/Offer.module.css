@@ -7,6 +7,10 @@
     width: 300px;
 }
 
+.card:hover {
+    outline: 2px solid #003CFF;
+}
+
 .wrapper {
     margin-bottom: 2rem;
     display: flex;
