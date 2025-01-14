@@ -1,0 +1,8 @@
+.offers {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    margin-bottom: 6rem;
+}

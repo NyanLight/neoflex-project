@@ -1,3 +1,4 @@
+import { Offers } from '../components/Offers';
 import { Platinum } from '../components/Platinum/Platinum';
 import { Prescoring } from '../components/Prescoring';
 import { Steps } from '../components/Steps';
@@ -10,6 +11,7 @@ export function Loan() {
       <TabbedContent />
       <Steps />
       <Prescoring />
+      <Offers />
     </>
   );
 }

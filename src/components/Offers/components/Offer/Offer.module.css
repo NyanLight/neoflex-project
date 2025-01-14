@@ -1,0 +1,44 @@
+.card {
+    background-color: #FFFFFF;   
+    padding: 2rem;
+    border-radius: 28px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+.card__fields {
+    margin-bottom: 5.625rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: #1C1C1E;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+.card__field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.field__icon {
+    display: block;
+    height: 1.5rem;
+}
+.card__button {
+    display: flex;
+    justify-content: center;
+}
