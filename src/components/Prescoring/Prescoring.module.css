@@ -20,6 +20,10 @@
   padding: 1.5rem;
 }
 
+.leftSide__title {
+  margin-bottom: 2rem;
+}
+
 .inputField__title {
   margin-bottom: 1.25rem;
 }
