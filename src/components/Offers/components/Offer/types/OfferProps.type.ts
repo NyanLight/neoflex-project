@@ -1,9 +1,3 @@
-export type OfferProps = {
-    requested: number;
-    total: number;
-    months: number;
-    monthly: number;
-    rate: number;
-    insurance: boolean;
-    salary: boolean;
-}
+import { OfferData } from "../../../../../types/OfferData.type";
+
+export type OfferProps = OfferData & {setSend: () => void};

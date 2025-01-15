@@ -5,7 +5,7 @@ import { FormFields } from './types/FormFields.type';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from './Prescoring.module.css';
 import { Divider } from '../../ui/Divider';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   inputsFirstPart,
   inputsSecondPart,
@@ -15,8 +15,20 @@ import {
 } from './constants';
 import { addSpace } from './utils';
 import { Loader } from '../../ui/Loader';
+import { useOfferStore } from '../../store';
+import { Offers } from '../Offers';
 
 export function Prescoring() {
+
+  useEffect(() => {
+    const item = localStorage.getItem('offer-storage');
+    if (item) {
+      const itemJSON = JSON.parse(item);
+      useOfferStore.getState().setOffers(itemJSON.state.offers);
+      console.log(useOfferStore.getState().offers);
+    } 
+  }, []);
+
   const currentStyle = (name: string) => {
     if (errors[name as keyof FormFields]) return invalidStyle;
     if (touchedFields[name as keyof object] | dirtyFields[name as keyof object])
@@ -46,18 +58,24 @@ export function Prescoring() {
     );
 
     if (!spacelessData.middleName) spacelessData.middleName = null;
-    await fetch('http://localhost:8080/application', {
+    const response = await fetch('http://localhost:8080/application', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(spacelessData),
     });
+    if (response.ok) {
+    const offers = await response.json(); 
+    useOfferStore.getState().setOffers(offers);}
   };
 
   return (
     <section className={styles.prescoring} id="prescoring">
-      <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
+      {useOfferStore.getState().offers.length === 4  ? 
+        <Offers offers={useOfferStore.getState().offers} />
+        :
+      <form autoComplete="off" onSubmit={handleSubmit(onSubmit)} className={styles.prescoring__form}>
         <div className={styles.top}>
           <div className={styles.top__leftSide}>
             <div className={styles.leftSide__infoField}>
@@ -168,6 +186,7 @@ export function Prescoring() {
           )}
         </div>
       </form>
+}
     </section>
   );
 }
