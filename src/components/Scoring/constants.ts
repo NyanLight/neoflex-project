@@ -1,4 +1,5 @@
 import { FormFields } from './types/FormFields.type';
+import { validateYear } from './utils';
 
 export const invalidStyle = {
   border: '2px solid #FF5631',
@@ -101,7 +102,7 @@ export const inputsFirstPart = [
     label: 'Your number of dependents',
     placeholder: '0',
     rules: {
-      required: 'Field is required',
+      required: 'Enter the number of your dependents',
     },
   },
   {
@@ -112,6 +113,7 @@ export const inputsFirstPart = [
     placeholder: '',
     rules: {
       required: 'Field is required',
+       validate: (value: Date) => validateYear(value),
     },
   },
   {
@@ -162,6 +164,10 @@ export const inputsSecondPart = [
     placeholder: 'For example 10',
     rules: {
       required: 'Enter your work experience total',
+      pattern: {
+        value: /^[0-9]{1,2}$/,
+        message: 'The value cannot be greater than two digits.',
+      },
     },
   },
   {
@@ -172,6 +178,10 @@ export const inputsSecondPart = [
     placeholder: 'For example 2',
     rules: {
       required: 'Enter your work experience current',
+      pattern: {
+        value: /^[0-9]{1,2}$/,
+        message: 'The value cannot be greater than two digits.',
+      },
     },
   },
 ];
