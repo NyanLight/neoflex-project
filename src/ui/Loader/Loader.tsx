@@ -8,7 +8,7 @@ export function Loader({ isDisplaying }: { isDisplaying: boolean }) {
     >
       <img
         className={styles.loader}
-        src="src/assets/spinner.svg"
+        src="/src/assets/spinner.svg"
         alt="Loading..."
       />
     </div>

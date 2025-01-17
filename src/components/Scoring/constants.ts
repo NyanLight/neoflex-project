@@ -25,7 +25,9 @@ export const selectsFirstPart: Array<{
     required: true,
     name: 'gender',
     label: "What's your gender",
-    rules: { required: 'Select your gender' },
+    rules: {
+      required: 'Select your gender.',
+    },
     data: [
       { label: '', value: '' },
       { label: 'Male', value: 'MALE' },
@@ -113,7 +115,7 @@ export const inputsFirstPart = [
     placeholder: '',
     rules: {
       required: 'Field is required',
-       validate: (value: Date) => validateYear(value),
+      validate: (value: Date) => validateYear(value),
     },
   },
   {

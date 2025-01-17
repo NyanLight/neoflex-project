@@ -13,8 +13,17 @@ import {
   inputsSecondPart,
 } from './constants';
 import { Input } from '../../ui/Input';
+import { useState } from 'react';
+import { useParams } from 'react-router';
 
 export function Scoring() {
+  const params = useParams();
+  const fetchURL = `http://localhost:8080/application/registration/${params.applicationId}`;
+  const [isSent, setSend] = useState<boolean>(false);
+    function handleSending() {
+      setSend(true);
+    }
+
   const currentStyle = (name: string) => {
     if (errors[name as keyof FormFields]) return invalidStyle;
     if (touchedFields[name as keyof object] | dirtyFields[name as keyof object])
@@ -34,17 +43,46 @@ export function Scoring() {
         typeof value === 'string' ? value.replace(/\s+/g, '') : value,
       ]),
     );
-    await fetch('http://localhost:8080/application/registration/208', {
-      method: 'POST',
+
+    const request = {
+      gender: spacelessData.gender,
+      maritalStatus: spacelessData.maritalStatus,
+      dependentAmount: spacelessData.dependentAmount,
+      passportIssueDate:  spacelessData.passportIssueDate,
+      passportIssueBranch: spacelessData.passportIssueBranch,
+      employment: {
+        employmentStatus: spacelessData.employmentStatus,
+        employerINN: spacelessData.employerINN,
+        salary: spacelessData.salary,
+        position: spacelessData.position,
+        workExperienceTotal: spacelessData.workExperienceTotal,
+        workExperienceCurrent: spacelessData.workExperienceCurrent,
+      },
+      account: '11223344556677889900'
+    }
+
+    const response = await fetch(fetchURL, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(spacelessData),
+      body: JSON.stringify(request),
     });
+    if (response.ok) await handleSending();
   };
 
   return (
     <section className={styles.scoring}>
+       {isSent ? (
+         <div className={styles.sentDiv}>
+         <div className={styles.sentDiv__title}>
+         Wait for a decision on the application
+         </div>
+         <div className={styles.sentDiv__regular}>
+         The answer will come to your mail within 10 minutes
+         </div>
+       </div>
+     ) : (
       <form
         autoComplete="off"
         onSubmit={handleSubmit(onSubmit)}
@@ -57,11 +95,14 @@ export function Scoring() {
           <div className={styles.scoring__step}>Step 2 of 5</div>
         </div>
         <div className={styles.inputs}>
-          {selectsFirstPart.map((select) => (
-            <div className={styles.input}>
+          {selectsFirstPart.map((select, index) => (
+            <div className={styles.input} key={index}>
               <Select
                 name={select.name}
+                key={index}
                 label={select.label}
+                style={currentStyle(select.name)}
+                rules={select.rules}
                 required={select.required}
                 register={register}
                 error={errors[select.name as keyof FormFields]}
@@ -69,8 +110,8 @@ export function Scoring() {
               />
             </div>
           ))}
-          {inputsFirstPart.map((input) => (
-            <div className={styles.input}>
+          {inputsFirstPart.map((input, index) => (
+            <div className={styles.input} key={index}>
               <Input
                 name={input.name}
                 register={register}
@@ -87,20 +128,22 @@ export function Scoring() {
         </div>
         <h3 className={styles.employment}>Employment</h3>
         <div className={styles.inputs}>
-        {selectsSecondPart.map((select) => (
-            <div className={styles.input}>
+        {selectsSecondPart.map((select, index) => (
+            <div className={styles.input}  key={index}>
               <Select
                 name={select.name}
                 label={select.label}
                 required={select.required}
+                style={currentStyle(select.name)}
                 register={register}
+                rules={select.rules}
                 error={errors[select.name as keyof FormFields]}
                 options={select.data}
               />
             </div>
           ))}
-           {inputsSecondPart.map((input) => (
-            <div className={styles.input}>
+           {inputsSecondPart.map((input, index) => (
+            <div className={styles.input} key={index}>
               <Input
                 name={input.name}
                 register={register}
@@ -133,7 +176,7 @@ export function Scoring() {
             <Loader isDisplaying={true} />
           )}
         </div>
-      </form>
+      </form>)}
     </section>
   );
 }

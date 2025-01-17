@@ -13,6 +13,9 @@ import { Layout } from './pages/Layout';
 import { Loan } from './pages/Loan';
 import { NotFound } from './components/NotFound/NotFound';
 import { Scoring } from './components/Scoring';
+import { Document } from './components/Document';
+import { Sign } from './components/Sign';
+import { Code } from './components/Code';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,18 @@ const router = createBrowserRouter([
       {
         path: '/loan/:applicationId',
         element: <Scoring />
+      },
+      {
+        path: 'loan/:applicationId/document/',
+        element: <Document />
+      },
+      {
+        path: 'loan/:applicationId/document/sign',
+        element: <Sign />
+      },
+      {
+        path: 'loan/:applicationId/code',
+        element: <Code />
       }
     ],
   },
