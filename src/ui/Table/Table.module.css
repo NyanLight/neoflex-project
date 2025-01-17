@@ -1,0 +1,35 @@
+.table {
+  font-family: 'Ubuntu', sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.table__headers {
+  text-align: left;
+}
+
+.table__header {
+    padding: 1rem 0;
+    color: #4A5568;
+    background-image: '/src/assets/caret.png';
+}
+
+.table__header > span > img {
+    padding: 0 0.5rem 0.1rem;
+}
+
+.table__desc {
+    transform: rotate(180deg);
+}
+
+.table__regularRow {
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    color: #1A202C;
+}
+
+.table__regularCell {
+    padding: 1rem 0;
+}
