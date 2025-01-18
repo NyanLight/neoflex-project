@@ -25,6 +25,7 @@ export function Document() {
           <div className={styles.denyPart}>
             <Button
               handler={toggleModal}
+              isRed={true}
               horizontalPadding="1.75rem"
               verticalPadding="0.75rem"
               text="Deny"
@@ -46,6 +47,7 @@ export function Document() {
               <Button
                 borderRadius="8px"
                 text="Deny"
+                isRed={true}
                 horizontalPadding="1.75rem"
                 verticalPadding="0.75rem"
                 handler={() => console.log('deny in modal')}

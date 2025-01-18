@@ -31,9 +31,7 @@
   color: black;
 }
 
-.denyPart button {
-  background-color: rgba(217, 55, 55, 0.8);
-}
+
 
 .modal, .modal__overlay {
   font-family: 'Ubuntu', sans-serif;
