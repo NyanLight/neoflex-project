@@ -3,13 +3,24 @@ import { Button } from '../../ui/Button';
 import { Table } from '../../ui/Table';
 import styles from './Document.module.css';
 import { data, headers } from './constants';
+import { useNavigate } from 'react-router';
 
 export function Document() {
-  const [modal, setModal] = useState(false);
+  const [denySent, setSent] = useState<boolean>(false);
+  const [modal, setModal] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const toggleModal = () => {
     setModal(!modal);
   };
+
+  const denyApplication = () => {
+    setSent(true);
+  };
+
+  const goHome = () => {
+    navigate('/');
+  }
 
   return (
     <section className={styles.document}>
@@ -41,25 +52,31 @@ export function Document() {
           <div className={styles.modal__content}>
             <div className={styles.modal__title}>Deny application</div>
             <div className={styles.modal__regular}>
-              You exactly sure, you want to cancel this application?
+              {denySent
+                ? 'Your application has been deny!'
+                : 'You exactly sure, you want to cancel this application?'}
             </div>
-            <div className={styles.modal__buttons}>
-              <Button
-                borderRadius="8px"
-                text="Deny"
-                isRed={true}
-                horizontalPadding="1.75rem"
-                verticalPadding="0.75rem"
-                handler={() => console.log('deny in modal')}
-              />
-              <Button
-                borderRadius="8px"
-                text="Cancel"
-                horizontalPadding="1.75rem"
-                verticalPadding="0.75rem"
-                handler={() => console.log('cancel in modal')}
-              />
-            </div>
+          {denySent ? <div className={styles.modal__button}>
+            <Button text='Go home' verticalPadding='0.75rem' horizontalPadding='1.75rem' borderRadius='8px' handler={goHome} />
+          </div>
+          :
+          <div className={styles.modal__buttons}>
+            <Button
+              borderRadius="8px"
+              text="Deny"
+              isRed={true}
+              horizontalPadding="1.75rem"
+              verticalPadding="0.75rem"
+              handler={denyApplication}
+            />
+            <Button
+              borderRadius="8px"
+              text="Cancel"
+              horizontalPadding="1.75rem"
+              verticalPadding="0.75rem"
+              handler={toggleModal}
+            />
+          </div>}
             <div className={styles.modal__close} onClick={toggleModal}>
               <img src="/src/assets/modal_cross.png" alt="" />
             </div>

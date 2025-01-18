@@ -57,7 +57,7 @@
   padding: 14px 28px;
   border-radius: 3px;
   max-width: 600px;
-  min-width: 300px;
+  min-width: 450px;
 }
 
 .modal__title {
@@ -80,6 +80,11 @@
 }
 
 .modal__buttons {
+  display: flex;
+  justify-content: end;
+  gap: 2.5rem;
+}
+.modal__button {
   display: flex;
   justify-content: end;
   gap: 2.5rem;
