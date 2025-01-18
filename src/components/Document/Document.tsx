@@ -1,3 +1,4 @@
+import { Button } from '../../ui/Button';
 import { Table } from '../../ui/Table';
 import styles from './Document.module.css';
 
@@ -77,7 +78,15 @@ export function Document() {
           <h2 className={styles.document__title}>Payment Schedule</h2>
           <div className={styles.document__step}>Step 3 of 5</div>
         </div>
-        <Table data={data} headers={headers} />
+        <div className={styles.document__table}>
+          <Table data={data} headers={headers} />
+        </div>
+        <div className={styles.buttons}>
+          <div className={styles.denyPart}>
+          <Button handler={() => console.log('deny')} horizontalPadding='1.75rem' verticalPadding='0.75rem'  text='Deny'  borderRadius='8px' />
+          </div>
+          <div className={styles.acceptPart}></div>
+        </div>
       </div>
     </section>
   );
