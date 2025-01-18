@@ -7,8 +7,9 @@ import { useNavigate } from 'react-router';
 import { Checkbox } from '../../ui/Checkbox';
 
 export function Document() {
-  const [denySent, setSent] = useState<boolean>(false);
+  const [denySent, setDenySent] = useState<boolean>(false);
   const [modal, setModal] = useState<boolean>(false);
+  const [documentSent, setDocumentSent] =useState<boolean>(false);
   const navigate = useNavigate();
 
   const toggleModal = () => {
@@ -16,7 +17,7 @@ export function Document() {
   };
 
   const denyApplication = () => {
-    setSent(true);
+    setDenySent(true);
   };
 
   const goHome = () => {
@@ -25,38 +26,45 @@ export function Document() {
 
   return (
     <section className={styles.document}>
-      <div className={styles.wrapper}>
-        <div className={styles.info}>
-          <h2 className={styles.document__title}>Payment Schedule</h2>
-          <div className={styles.document__step}>Step 3 of 5</div>
-        </div>
-        <div className={styles.document__table}>
-          <Table data={data} headers={headers} />
-        </div>
-        <div className={styles.buttons}>
-          <div className={styles.denyPart}>
-            <Button
-              handler={toggleModal}
-              isRed={true}
-              horizontalPadding="1.75rem"
-              verticalPadding="0.75rem"
-              text="Deny"
-              borderRadius="8px"
-            />
+    {documentSent ? <div className={styles.sentDiv}>
+          <div className={styles.sentDiv__title}>
+          Documents are formed
           </div>
-          <div className={styles.acceptPart}>
-            <Checkbox
-              label={'I agree with the payment schedule'}
-              text={'Send'}
-              borderRadius={'8px'}
-              horizontalPadding="1.75rem"
-              gap={'1rem'}
-              verticalPadding="0.75rem"
-              handler={() => console.log('sending...')}
-            />
+          <div className={styles.sentDiv__regular}>
+          Documents for signing will be sent to your email
           </div>
+        </div> : <div className={styles.wrapper}>
+      <div className={styles.info}>
+        <h2 className={styles.document__title}>Payment Schedule</h2>
+        <div className={styles.document__step}>Step 3 of 5</div>
+      </div>
+      <div className={styles.document__table}>
+        <Table data={data} headers={headers} />
+      </div>
+      <div className={styles.buttons}>
+        <div className={styles.denyPart}>
+          <Button
+            handler={toggleModal}
+            isRed={true}
+            horizontalPadding="1.75rem"
+            verticalPadding="0.75rem"
+            text="Deny"
+            borderRadius="8px"
+          />
+        </div>
+        <div className={styles.acceptPart}>
+          <Checkbox
+            label={'I agree with the payment schedule'}
+            text={'Send'}
+            borderRadius={'8px'}
+            horizontalPadding="1.75rem"
+            gap={'1rem'}
+            verticalPadding="0.75rem"
+            handler={() => setDocumentSent(true)}
+          />
         </div>
       </div>
+    </div>}
       {modal && (
         <div className={styles.modal}>
           <div className={styles.modal__overlay} onClick={toggleModal}></div>

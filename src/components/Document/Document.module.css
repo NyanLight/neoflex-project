@@ -36,6 +36,26 @@
   justify-content: space-between;
 }
 
+.sentDiv {
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  padding: 12rem 0 12rem 0;
+}
+
+.sentDiv__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1c1c1e;
+  margin-bottom: 2rem;
+}
+
+.sentDiv__regular {
+  color: #4f5665;
+  font-weight: 500;
+}
+
+
 .modal,
 .modal__overlay {
   font-family: 'Ubuntu', sans-serif;
