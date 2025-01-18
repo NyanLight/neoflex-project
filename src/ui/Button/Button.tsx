@@ -1,4 +1,5 @@
 import styles from './Button.module.css';
+import { ButtonProps } from './types/ButtonProps.type';
 
 export function Button({
   text,
@@ -6,18 +7,13 @@ export function Button({
   horizontalPadding,
   verticalPadding,
   isRed = false,
+  isDisabled = false,
   handler,
-}: {
-  text: string;
-  borderRadius: string;
-  horizontalPadding: string;
-  isRed?: boolean;
-  verticalPadding: string;
-  handler: () => void;
-}) {
+}: ButtonProps) {
   const padding = `${verticalPadding} ${horizontalPadding}`;
   return (
     <button
+      disabled={isDisabled}
       className={
         isRed ? `${styles.button} ${styles.button__deny}` : styles.button
       }
