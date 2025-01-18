@@ -1,6 +1,7 @@
 import { Checkbox } from '../../ui/Checkbox';
 import styles from './Sign.module.css';
 import { useState } from 'react';
+import creditCardOffer from '/src/assets/credit-card-offer.pdf'
 
 export function Sign() {
   const [isSent, setSend] = useState<boolean>(false);
@@ -20,7 +21,7 @@ export function Sign() {
       ) : (
         <div className={styles.wrapper}>
           <div className={styles.topPart}>
-            <div className={styles.title}>Signing of documents</div>
+            <h2 className={styles.title}>Signing of documents</h2>
             <div className={styles.step}>Step 4 of 5</div>
           </div>
           <div className={styles.regular}>
@@ -36,11 +37,13 @@ export function Sign() {
             data.
           </div>
           <div className={styles.pdf}>
-            <img
-              className={styles.pdf__icon}
-              src="/src/assets/pdf.svg"
-              alt="PDF document"
-            />
+            <a href={creditCardOffer} download={'credit-card-offer'}>
+              <img
+                className={styles.pdf__icon}
+                src="/src/assets/pdf.svg"
+                alt="PDF document"
+              />
+            </a>
             <div className={styles.pdf__description}>
               Information on your card
             </div>
@@ -52,7 +55,7 @@ export function Sign() {
               gap="5rem"
               borderRadius="8px"
               verticalPadding="0.75rem"
-              horizontalPadding="1.75rem"
+              horizontalPadding="3.75rem"
               handler={() => setSend(true)}
             />
           </div>
