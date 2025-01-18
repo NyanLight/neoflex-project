@@ -1,0 +1,28 @@
+.sign {
+  max-width: 1300px;
+  margin: auto;
+  padding-top: 1.5rem;
+}
+
+.sentDiv {
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    padding: 12rem 0 12rem 0;
+  }
+  
+  .sentDiv__title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1c1c1e;
+    margin: 0 auto 2rem;
+    max-width: 500px;
+  }
+  
+  .sentDiv__regular {
+    color: #4f5665;
+    font-weight: 500;
+    max-width: 400px;
+    margin: auto;
+  }
+  
