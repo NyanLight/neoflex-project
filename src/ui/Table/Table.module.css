@@ -11,25 +11,25 @@
 }
 
 .table__header {
-    padding: 1rem 0;
-    color: #4A5568;
-    background-image: '/src/assets/caret.png';
+  padding: 1rem 0;
+  color: #4a5568;
+  background-image: '/src/assets/caret.png';
 }
 
 .table__header > span > img {
-    padding: 0 0.5rem 0.1rem;
+  padding: 0 0.5rem 0.1rem;
 }
 
 .table__desc {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .table__regularRow {
-    border-top: 1px solid #E2E8F0;
-    border-bottom: 1px solid #E2E8F0;
-    color: #1A202C;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #1a202c;
 }
 
 .table__regularCell {
-    padding: 1rem 0;
+  padding: 1rem 0;
 }

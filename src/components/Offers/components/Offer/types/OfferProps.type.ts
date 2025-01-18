@@ -1,3 +1,3 @@
-import { OfferData } from "../../../../../types/OfferData.type";
+import { OfferData } from '../../../../../types/OfferData.type';
 
-export type OfferProps = OfferData & {setSend: () => void};
+export type OfferProps = OfferData & { setSend: () => void };

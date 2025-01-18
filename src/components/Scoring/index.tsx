@@ -1,1 +1,1 @@
-export {Scoring} from './Scoring'
+export { Scoring } from './Scoring';

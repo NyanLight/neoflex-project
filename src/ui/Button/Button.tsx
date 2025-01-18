@@ -11,14 +11,16 @@ export function Button({
   text: string;
   borderRadius: string;
   horizontalPadding: string;
-  isRed?: boolean
+  isRed?: boolean;
   verticalPadding: string;
   handler: () => void;
 }) {
   const padding = `${verticalPadding} ${horizontalPadding}`;
-  return ( 
+  return (
     <button
-      className={isRed ? `${styles.button} ${styles.button__deny}` : styles.button}
+      className={
+        isRed ? `${styles.button} ${styles.button__deny}` : styles.button
+      }
       style={{ borderRadius, padding }}
       onClick={handler}
     >

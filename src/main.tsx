@@ -32,20 +32,20 @@ const router = createBrowserRouter([
       },
       {
         path: '/loan/:applicationId',
-        element: <Scoring />
+        element: <Scoring />,
       },
       {
         path: 'loan/:applicationId/document/',
-        element: <Document />
+        element: <Document />,
       },
       {
         path: 'loan/:applicationId/document/sign',
-        element: <Sign />
+        element: <Sign />,
       },
       {
         path: 'loan/:applicationId/code',
-        element: <Code />
-      }
+        element: <Code />,
+      },
     ],
   },
 ]);

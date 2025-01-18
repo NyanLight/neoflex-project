@@ -11,7 +11,7 @@ export function Offers({ offers }: { offers: OfferData[] }) {
 
   return (
     <section className={styles.offers}>
-      {isSent || (localStorage.getItem('offer-sent')) ? (
+      {isSent || localStorage.getItem('offer-sent') ? (
         <div className={styles.sentDiv}>
           <div className={styles.sentDiv__title}>
             The preliminary decision has been sent to your email.

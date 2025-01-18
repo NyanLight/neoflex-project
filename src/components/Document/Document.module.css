@@ -1,13 +1,13 @@
 .wrapper {
-    max-width: 1300px;
-    padding: 2rem;
-    margin: 0 auto 6.25rem;
-    background-color: white;
-    border-radius: 28px;
-    box-shadow:
-      0px 0px 8px 0px rgba(0, 0, 0, 0.08),
-      0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-    font-family: 'Ubuntu', sans-serif;
+  max-width: 1300px;
+  padding: 2rem;
+  margin: 0 auto 6.25rem;
+  background-color: white;
+  border-radius: 28px;
+  box-shadow:
+    0px 0px 8px 0px rgba(0, 0, 0, 0.08),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .document__table {
@@ -24,16 +24,15 @@
 .document__title {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #1C1C1E;
+  color: #1c1c1e;
 }
 
 .document__step {
   color: black;
 }
 
-
-
-.modal, .modal__overlay {
+.modal,
+.modal__overlay {
   font-family: 'Ubuntu', sans-serif;
   width: 100vw;
   height: 100vh;
@@ -45,7 +44,7 @@
 }
 
 .modal__overlay {
-  background: rgba(49,49,49,0.8);
+  background: rgba(49, 49, 49, 0.8);
 }
 
 .modal__content {
@@ -62,13 +61,13 @@
 }
 
 .modal__title {
-  color: #1C1C1E;
+  color: #1c1c1e;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .modal__regular {
-  color: #1A202C;
+  color: #1a202c;
   font-weight: 500;
   margin-bottom: 2rem;
 }

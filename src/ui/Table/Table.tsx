@@ -15,20 +15,29 @@ export function Table({
     remainingDebt: number;
   }[];
 }) {
-  const [sort, setSort] = useState({keyToSort: 'number', direction: 'asc'})
+  const [sort, setSort] = useState({ keyToSort: 'number', direction: 'asc' });
 
-  function handleHeaderClick (header) {
+  function handleHeaderClick(header) {
     setSort({
       keyToSort: header.key,
-      direction: header.key === sort.keyToSort ? sort.direction === 'asc' ? 'desc' : 'asc' : 'asc'  
-    })
+      direction:
+        header.key === sort.keyToSort
+          ? sort.direction === 'asc'
+            ? 'desc'
+            : 'asc'
+          : 'asc',
+    });
   }
 
   function getSortedArray(array) {
     if (sort.direction === 'asc') {
-      return array.sort((a, b) => (a[sort.keyToSort] > b[sort.keyToSort] ? 1 : -1))
+      return array.sort((a, b) =>
+        a[sort.keyToSort] > b[sort.keyToSort] ? 1 : -1,
+      );
     }
-    return array.sort((a, b) => (a[sort.keyToSort] > b[sort.keyToSort] ? -1 : 1))
+    return array.sort((a, b) =>
+      a[sort.keyToSort] > b[sort.keyToSort] ? -1 : 1,
+    );
   }
 
   return (
@@ -36,9 +45,23 @@ export function Table({
       <thead className={styles.table__headers}>
         <tr>
           {headers.map((header) => (
-            <th onClick={() => handleHeaderClick(header)} key={header.key} className={styles.table__header}>
+            <th
+              onClick={() => handleHeaderClick(header)}
+              key={header.key}
+              className={styles.table__header}
+            >
               <span>{header.label}</span>
-              <span><img className={sort.keyToSort === header.key && sort.direction === 'asc' ? styles.table__desc : styles.table__icon } src="/src/assets/caret.png" alt="" /></span>
+              <span>
+                <img
+                  className={
+                    sort.keyToSort === header.key && sort.direction === 'asc'
+                      ? styles.table__desc
+                      : styles.table__icon
+                  }
+                  src="/src/assets/caret.png"
+                  alt=""
+                />
+              </span>
             </th>
           ))}
         </tr>

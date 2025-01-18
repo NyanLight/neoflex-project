@@ -38,24 +38,23 @@
 }
 
 .input {
-    flex-basis: 30%;
-    flex-grow: 1;
+  flex-basis: 30%;
+  flex-grow: 1;
 }
 
 .employment {
-    margin-bottom: 2rem; 
-    font-size: 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
 }
 
 .inputs {
-    margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .submit {
   display: flex;
   justify-content: end;
 }
-
 
 .sentDiv {
   width: 100%;
@@ -67,11 +66,11 @@
 .sentDiv__title {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #1C1C1E;
+  color: #1c1c1e;
   margin-bottom: 2rem;
 }
 
 .sentDiv__regular {
-  color: #4F5665;
+  color: #4f5665;
   font-weight: 500;
 }
