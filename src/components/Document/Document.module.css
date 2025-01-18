@@ -31,6 +31,11 @@
   color: black;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .modal,
 .modal__overlay {
   font-family: 'Ubuntu', sans-serif;

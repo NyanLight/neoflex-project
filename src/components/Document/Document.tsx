@@ -50,6 +50,7 @@ export function Document() {
               text={'Send'}
               borderRadius={'8px'}
               horizontalPadding="1.75rem"
+              gap={'1rem'}
               verticalPadding="0.75rem"
               handler={() => console.log('sending...')}
             />

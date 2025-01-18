@@ -9,6 +9,7 @@ export function Checkbox({
   borderRadius,
   handler,
   verticalPadding,
+  gap,
   horizontalPadding,
   isRed,
 }: CheckboxProps) {
@@ -18,11 +19,13 @@ export function Checkbox({
   };
 
   return (
-    <div className={styles.wrapper}>
-      <label htmlFor="">
-        <input type="checkbox" checked={checked} onChange={handleCheckbox} />
-        {label}
-      </label>
+    <div className={styles.wrapper} style={{gap}}>
+      <div className={styles.checkbox}>
+          <input type="checkbox" checked={checked} onChange={handleCheckbox} />
+          <div>  
+            {label}
+          </div>
+      </div>
       <Button
         borderRadius={borderRadius}
         handler={handler}
