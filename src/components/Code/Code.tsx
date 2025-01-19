@@ -37,7 +37,7 @@ export function Code() {
   }, [otp])
 
   return (
-    <section className={styles.code}>
+    <div>
       {isSent ? (
         <div className={styles.sentDiv}>
           <div className={styles.sentDiv__imgWrapper}>
@@ -59,7 +59,7 @@ export function Code() {
             />
           </div>
         </div>
-      ) : (
+      ) : (<section className={styles.code}>
         <div className={styles.wrapper}>
           <h2 className={styles.title}>Please enter confirmation code</h2>
           <div className={styles.otp}>
@@ -77,7 +77,8 @@ export function Code() {
             <div className={invalid ? styles.otp__error : styles.hidden}>Invalid confirmation code</div>
           </div>
         </div>
-      )}
     </section>
+      )}
+  </div>
   );
 }

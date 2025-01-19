@@ -1,7 +1,7 @@
 .code {
     max-width: 1300px;
     margin: 0 auto 6.25rem;
-    padding-top: 1.5rem;
+    padding: 11rem 0;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -47,6 +47,7 @@
 
 .sentDiv {
     width: 100%;
+    padding: 7rem 0;
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
     display: flex;
