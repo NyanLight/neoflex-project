@@ -11,7 +11,7 @@ export function Offer({
   requestedAmount,
   term,
   totalAmount,
-  setSend,
+  handler,
 }: OfferProps) {
   async function btnHandler() {
     const response = await fetch('http://localhost:8080/application/apply', {
@@ -31,7 +31,7 @@ export function Offer({
       }),
     });
     if (response.ok) {
-      await setSend();
+      await handler();
       localStorage.setItem('offer-sent', 'true');
     }
   }

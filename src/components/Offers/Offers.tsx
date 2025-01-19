@@ -2,11 +2,22 @@ import { Offer } from './components/Offer';
 import { useState } from 'react';
 import styles from './Offers.module.css';
 import { OfferData } from '../../types/OfferData.type';
+import { useAuthStore } from '../../store';
 
 export function Offers({ offers }: { offers: OfferData[] }) {
   const [isSent, setSend] = useState<boolean>(false);
-  function handleSending() {
-    setSend(true);
+  async function handleSending(selectedOffer: OfferData) {
+    const response = await fetch('http://localhost:8080/application/apply', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(selectedOffer),
+    });
+    if (response.ok) {
+        setSend(true)
+        useAuthStore.getState().setStep(2);
+      };
   }
 
   return (
@@ -34,7 +45,7 @@ export function Offers({ offers }: { offers: OfferData[] }) {
             requestedAmount={offer.requestedAmount}
             term={offer.term}
             rate={offer.rate}
-            setSend={handleSending}
+            handler={() => handleSending(offer)}
           />
         ))
       )}

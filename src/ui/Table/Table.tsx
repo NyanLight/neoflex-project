@@ -1,23 +1,17 @@
 import { useState } from 'react';
 import styles from './Table.module.css';
+import { TableRow } from './types/TableRow.type';
 
 export function Table({
   data,
   headers,
 }: {
-  headers: Record<string, string>[];
-  data: {
-    number: number;
-    date: string;
-    totalPayment: number;
-    interestPayment: number;
-    debtPayment: number;
-    remainingDebt: number;
-  }[];
+  headers: {label: string, key: keyof TableRow}[];
+  data: TableRow[];
 }) {
   const [sort, setSort] = useState({ keyToSort: 'number', direction: 'asc' });
 
-  function handleHeaderClick(header) {
+  function handleHeaderClick(header: Record<string, string>) {
     setSort({
       keyToSort: header.key,
       direction:
@@ -29,14 +23,14 @@ export function Table({
     });
   }
 
-  function getSortedArray(array) {
+  function getSortedArray(array: TableRow[]) {
     if (sort.direction === 'asc') {
       return array.sort((a, b) =>
-        a[sort.keyToSort] > b[sort.keyToSort] ? 1 : -1,
+        a[sort.keyToSort as keyof TableRow] > b[sort.keyToSort as keyof TableRow] ? 1 : -1,
       );
     }
     return array.sort((a, b) =>
-      a[sort.keyToSort] > b[sort.keyToSort] ? -1 : 1,
+      a[sort.keyToSort as keyof TableRow] > b[sort.keyToSort as keyof TableRow] ? -1 : 1,
     );
   }
 

@@ -3,6 +3,7 @@ import styles from './Sign.module.css';
 import { useState } from 'react';
 import creditCardOffer from '/src/assets/credit-card-offer.pdf'
 import { useParams } from 'react-router';
+import { useAuthStore } from '../../store';
 
 export function Sign() {
   const params = useParams();
@@ -14,7 +15,11 @@ export function Sign() {
       body: `${params.applicationId}`,
     })
     await console.log(response);
-    if (response.ok) setSend(true);
+    if (response.ok) 
+      {
+        setSend(true);
+        useAuthStore.getState().setStep(5);
+      };
   }
 
   return (

@@ -15,6 +15,7 @@ import {
 import { Input } from '../../ui/Input';
 import { useState } from 'react';
 import { useParams } from 'react-router';
+import { useAuthStore } from '../../store';
 
 export function Scoring() {
   const params = useParams();
@@ -68,7 +69,10 @@ export function Scoring() {
       },
       body: JSON.stringify(request),
     });
-    if (response.ok) await handleSending();
+    if (response.ok) {
+      await handleSending()
+      useAuthStore.getState().setStep(3);
+    };
   };
 
   return (

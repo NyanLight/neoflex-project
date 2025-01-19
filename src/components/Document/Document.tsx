@@ -6,6 +6,7 @@ import { headers } from './constants';
 import { useNavigate } from 'react-router';
 import { Checkbox } from '../../ui/Checkbox';
 import { useParams } from 'react-router';
+import { useAuthStore } from '../../store';
 
 export function Document() {
   const params = useParams();
@@ -31,18 +32,15 @@ export function Document() {
     setModal(!modal);
   };
 
-  const sendApply = async () => {
-    const responce = await fetch(`http://localhost:8080/document/${params.applicationId}`, {
+  const handleSend = async () => {
+    const response = await fetch(`http://localhost:8080/document/${params.applicationId}`, {
       method: 'POST',
       body: `${params.applicationId}`, 
     });
-    const obj =  await responce.json();
-    await console.log(obj);
-  }
-
-  const handleSend = () => {
-      sendApply();
+    if (response.ok) {
       setDocumentSent(true);
+      useAuthStore.getState().setStep(4);
+    }
   }
 
   const denyApplication = () => {

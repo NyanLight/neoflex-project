@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router';
 import { Button } from '../../ui/Button';
 import styles from './Code.module.css';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { fetchCode } from '../../api/fetchCode.api';
 
 export function Code() {
@@ -14,7 +14,7 @@ export function Code() {
 
   const handleCongratulationsBtn = () => {
     navigate('/');
-  }
+  };
 
   useEffect(() => {
     const downloadCode = async () => {
@@ -26,14 +26,14 @@ export function Code() {
     downloadCode();
   }, []);
 
-  function handleChange(element, index) {
-    if (isNaN(element.target.value)) return false;
+  function handleChange(element: ChangeEvent<HTMLInputElement>, index: number) {
+    if (isNaN(Number(element.target.value))) return;
     setOtp([
       ...otp.map((data, i) => (index === i ? element.target.value : data)),
     ]);
 
     if (element.target.value && element.target.nextSibling) {
-      element.target.nextSibling.focus();
+      (element.target.nextSibling as HTMLElement)?.focus();
     }
   }
 
@@ -57,14 +57,14 @@ export function Code() {
           {
             method: 'POST',
             headers: {
-              "Content-Type": 'application/json'
+              'Content-Type': 'application/json',
             },
             body: joined,
           },
         );
         if (response.ok) {
           setSent(true);
-          console.log(response);
+          localStorage.removeItem('auth');
         }
       };
       sendCode();

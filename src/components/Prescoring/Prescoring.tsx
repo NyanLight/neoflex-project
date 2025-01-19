@@ -15,7 +15,7 @@ import {
 } from './constants';
 import { addSpace } from './utils';
 import { Loader } from '../../ui/Loader';
-import { useOfferStore } from '../../store';
+import { useOfferStore, useAuthStore } from '../../store';
 import { Offers } from '../Offers';
 
 export function Prescoring() {
@@ -24,7 +24,6 @@ export function Prescoring() {
     if (item) {
       const itemJSON = JSON.parse(item);
       useOfferStore.getState().setOffers(itemJSON.state.offers);
-      console.log(useOfferStore.getState().offers);
     }
   }, []);
 
@@ -67,6 +66,7 @@ export function Prescoring() {
     if (response.ok) {
       const offers = await response.json();
       useOfferStore.getState().setOffers(offers);
+      useAuthStore.getState().setApplicationId(offers[0].applicationId);
     }
   };
 
