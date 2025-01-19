@@ -2,9 +2,20 @@ import { Checkbox } from '../../ui/Checkbox';
 import styles from './Sign.module.css';
 import { useState } from 'react';
 import creditCardOffer from '/src/assets/credit-card-offer.pdf'
+import { useParams } from 'react-router';
 
 export function Sign() {
+  const params = useParams();
   const [isSent, setSend] = useState<boolean>(false);
+
+  const handleSign = async () => {
+    const response = await fetch(`http://localhost:8080/document/${params.applicationId}/sign`, {
+      method: 'POST',
+      body: `${params.applicationId}`,
+    })
+    await console.log(response);
+    if (response.ok) setSend(true);
+  }
 
   return (
     <section className={styles.sign}>
@@ -56,7 +67,7 @@ export function Sign() {
               borderRadius="8px"
               verticalPadding="0.75rem"
               horizontalPadding="3.75rem"
-              handler={() => setSend(true)}
+              handler={handleSign}
             />
           </div>
         </div>
