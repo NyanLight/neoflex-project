@@ -23,15 +23,16 @@ export function Code() {
     const filledFields = otp.filter((value) => {
       return value != '';
     });
-    console.log(filledFields);
-
-    if (otp.join('') === rightAnswer) {
-      setSent(true);
-    }
     if (filledFields.length === 4 && otp.join('') != rightAnswer) {
       setInvalid(true);
     } else {
       setInvalid(false);
+    }
+  }, [otp])
+
+  useEffect(() => {
+    if (otp.join('') === rightAnswer) {
+      setSent(true);
     }
   }, [otp])
 
