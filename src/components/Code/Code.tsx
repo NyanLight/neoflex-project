@@ -24,7 +24,7 @@ export function Code() {
       }
     };
     downloadCode();
-  }, []);
+  }, [params.applicationId]);
 
   function handleChange(element: ChangeEvent<HTMLInputElement>, index: number) {
     if (isNaN(Number(element.target.value))) return;
@@ -46,7 +46,7 @@ export function Code() {
     } else {
       setInvalid(false);
     }
-  }, [otp]);
+  }, [answer, otp]);
 
   useEffect(() => {
     const joined = otp.join('');
@@ -69,7 +69,7 @@ export function Code() {
       };
       sendCode();
     }
-  }, [otp]);
+  }, [otp, answer, params.applicationId]);
 
   return (
     <div>
