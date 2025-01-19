@@ -1,4 +1,6 @@
-export const headers = [
+import { TableRow } from "../../ui/Table/types/TableRow.type";
+
+export const headers: {label: string, key: keyof TableRow}[] = [
   { label: 'NUMBER', key: 'number' },
   { label: 'DATE', key: 'date' },
   { label: 'TOTAL PAYMENT', key: 'totalPayment' },

@@ -20,7 +20,7 @@ export function Document() {
       await setData(paymentSchedule);
     };
     fetchTable();
-  }, []);
+  }, [fetchURL]);
 
   const [denySent, setDenySent] = useState<boolean>(false);
   const [modal, setModal] = useState<boolean>(false);
