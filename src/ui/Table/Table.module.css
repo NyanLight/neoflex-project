@@ -4,6 +4,7 @@
   border-collapse: collapse;
   font-size: 0.75rem;
   font-weight: 500;
+  min-width: 700px;
 }
 
 .table__headers {

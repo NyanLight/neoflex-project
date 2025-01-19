@@ -65,3 +65,20 @@
     margin: auto;
   }
   
+@media (max-width: 520px) {
+  .topPart {
+    gap: 1rem;
+  }
+  .regular {
+    width: 85%;
+    margin: 0 auto 2rem;
+  }
+
+  .checkbox {
+    justify-content: center;
+  }
+
+  .pdf {
+    margin-bottom: 1rem;
+  }
+}
