@@ -16,6 +16,7 @@ import { Scoring } from './components/Scoring';
 import { Document } from './components/Document';
 import { Sign } from './components/Sign';
 import { Code } from './components/Code';
+import { ProtectedRoute } from './components/ProtectedRoute';
 
 const router = createBrowserRouter([
   {
@@ -32,19 +33,31 @@ const router = createBrowserRouter([
       },
       {
         path: '/loan/:applicationId',
-        element: <Scoring />,
+        element: <ProtectedRoute requiredStep={2} />,
+        children: [
+          { path: '', element: <Scoring /> },
+        ],
       },
       {
         path: 'loan/:applicationId/document/',
-        element: <Document />,
+        element: <ProtectedRoute requiredStep={3} />,
+        children: [
+          { path: '', element: <Document /> },
+        ],
       },
       {
         path: 'loan/:applicationId/document/sign',
-        element: <Sign />,
+        element: <ProtectedRoute requiredStep={4} />,
+        children: [
+          { path: '', element: <Sign /> },
+        ],
       },
       {
         path: 'loan/:applicationId/code',
-        element: <Code />,
+        element: <ProtectedRoute requiredStep={5} />,
+        children: [
+          { path: '', element: <Code /> },
+        ],
       },
     ],
   },
