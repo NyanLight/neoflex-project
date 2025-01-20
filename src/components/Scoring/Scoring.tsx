@@ -18,9 +18,10 @@ import { useParams } from 'react-router';
 import { useAuthStore } from '../../store';
 
 export function Scoring() {
-  const params = useParams();
-  const fetchURL = `http://localhost:8080/application/registration/${params.applicationId}`;
   const [isSent, setSend] = useState<boolean>(false);
+  const {applicationId} = useParams();
+  const fetchURL = `http://localhost:8080/application/registration/${applicationId}`;
+  
   function handleSending() {
     setSend(true);
   }
@@ -70,9 +71,9 @@ export function Scoring() {
       body: JSON.stringify(request),
     });
     if (response.ok) {
-      await handleSending()
+      await handleSending();
       useAuthStore.getState().setStep(3);
-    };
+    }
   };
 
   return (

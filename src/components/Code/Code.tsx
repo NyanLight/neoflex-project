@@ -9,7 +9,7 @@ export function Code() {
   const [invalid, setInvalid] = useState(false);
   const [isSent, setSent] = useState<boolean>(false);
   const [answer, setAnswer] = useState(null);
-  const params = useParams();
+  const { applicationId } = useParams();
   const navigate = useNavigate();
 
   const handleCongratulationsBtn = () => {
@@ -18,13 +18,16 @@ export function Code() {
 
   useEffect(() => {
     const downloadCode = async () => {
-      if (params.applicationId) {
-        const fetchedAnswer = await fetchCode(params.applicationId);
-        await setAnswer(fetchedAnswer);
-      }
+      if (applicationId)
+        try {
+          const fetchedAnswer = await fetchCode(applicationId);
+          await setAnswer(fetchedAnswer);
+        } catch (error) {
+          console.error(error);
+        }
     };
     downloadCode();
-  }, [params.applicationId]);
+  }, [applicationId]);
 
   function handleChange(element: ChangeEvent<HTMLInputElement>, index: number) {
     if (isNaN(Number(element.target.value))) return;
@@ -53,7 +56,7 @@ export function Code() {
     if (joined === answer) {
       const sendCode = async () => {
         const response = await fetch(
-          `http://localhost:8080/document/${params.applicationId}/sign/code`,
+          `http://localhost:8080/document/${applicationId}/sign/code`,
           {
             method: 'POST',
             headers: {
@@ -69,7 +72,7 @@ export function Code() {
       };
       sendCode();
     }
-  }, [otp, answer, params.applicationId]);
+  }, [otp, answer, applicationId]);
 
   return (
     <div>

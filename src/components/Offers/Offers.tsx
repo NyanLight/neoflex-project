@@ -17,6 +17,8 @@ export function Offers({ offers }: { offers: OfferData[] }) {
     if (response.ok) {
         setSend(true)
         useAuthStore.getState().setStep(2);
+        localStorage.removeItem('offer-sent');
+        localStorage.removeItem('offer-storage');
       };
   }
 

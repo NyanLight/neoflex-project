@@ -4,22 +4,20 @@ import { useState } from 'react';
 import creditCardOffer from '/src/assets/credit-card-offer.pdf'
 import { useParams } from 'react-router';
 import { useAuthStore } from '../../store';
+import { sendSign } from '../../api/sendSign.api';
 
 export function Sign() {
-  const params = useParams();
+  const {applicationId} = useParams();
   const [isSent, setSend] = useState<boolean>(false);
 
   const handleSign = async () => {
-    const response = await fetch(`http://localhost:8080/document/${params.applicationId}/sign`, {
-      method: 'POST',
-      body: `${params.applicationId}`,
-    })
-    await console.log(response);
-    if (response.ok) 
-      {
-        setSend(true);
-        useAuthStore.getState().setStep(5);
-      };
+    if (applicationId) try {
+      await sendSign(applicationId)
+      setSend(true);
+      useAuthStore.getState().setStep(5);
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (

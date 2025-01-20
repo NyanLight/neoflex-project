@@ -7,50 +7,58 @@ import { useNavigate } from 'react-router';
 import { Checkbox } from '../../ui/Checkbox';
 import { useParams } from 'react-router';
 import { useAuthStore } from '../../store';
+import { denyApplication } from '../../api/denyApplication.api';
+import { sendDocument } from '../../api/sendDocument.api';
+import { fetchTable } from '../../api/fetchTable.api';
 
 export function Document() {
-  const params = useParams();
-  const fetchURL = `http://localhost:8080/admin/application/${params.applicationId}`;
-  
-  useEffect(() => {
-    const fetchTable = async () => {
-      const request = await fetch(fetchURL);
-      const requestObj = await request.json();
-      const paymentSchedule = await requestObj.credit.paymentSchedule;
-      await setData(paymentSchedule);
-    };
-    fetchTable();
-  }, [fetchURL]);
-
+  const { applicationId } = useParams();
   const [denySent, setDenySent] = useState<boolean>(false);
+  const [documentSent, setDocumentSent] = useState<boolean>(false);
   const [modal, setModal] = useState<boolean>(false);
   const [data, setData] = useState([]);
-  const [documentSent, setDocumentSent] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  const toggleModal = () => {
-    setModal(!modal);
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      if (applicationId) try {
+        const fetchedData = await fetchTable(applicationId);
+        setData(fetchedData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, [applicationId]);
 
+  
   const handleSend = async () => {
-    const response = await fetch(`http://localhost:8080/document/${params.applicationId}`, {
-      method: 'POST',
-      body: `${params.applicationId}`, 
-    });
-    if (response.ok) {
+    if (applicationId) try {
+      sendDocument(applicationId);
       setDocumentSent(true);
       useAuthStore.getState().setStep(4);
+    } catch (error) {
+      console.error(error);
     }
-  }
-
-  const denyApplication = () => {
-    setDenySent(true);
   };
-
+  
+  const handleDeny = async () => {
+    if (applicationId) try {
+      await denyApplication(applicationId);
+      setDenySent(true);
+      localStorage.removeItem('auth');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
   const goHome = () => {
     navigate('/');
   };
-
+  
+  const toggleModal = () => {
+    setModal(!modal);
+  };
   return (
     <section className={styles.document}>
       {documentSent ? (
@@ -122,7 +130,7 @@ export function Document() {
                   isRed={true}
                   horizontalPadding="1.75rem"
                   verticalPadding="0.75rem"
-                  handler={denyApplication}
+                  handler={handleDeny}
                 />
                 <Button
                   borderRadius="8px"
@@ -133,7 +141,10 @@ export function Document() {
                 />
               </div>
             )}
-            <div className={styles.modal__close} onClick={toggleModal}>
+            <div
+              className={styles.modal__close}
+              onClick={denySent ? goHome : toggleModal}
+            >
               <img src="/src/assets/modal_cross.png" alt="" />
             </div>
           </div>

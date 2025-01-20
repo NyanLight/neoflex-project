@@ -8,10 +8,12 @@ export const ProtectedRoute = ({ requiredStep }: { requiredStep: number }) => {
   const currentStep = useAuthStore((state) => state.step);
 
   if (storedApplicationId != applicationId) {
+    alert('id')
     return <Navigate to="/" replace />;
   }
 
   if (currentStep < requiredStep) {
+    alert('step')
     return <Navigate to="/" replace />;
   }
 
