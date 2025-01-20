@@ -2,13 +2,11 @@ import { Button } from '../../ui/Button';
 import styles from './Platinum.module.css';
 import { Tooltip } from '../../ui/Tooltip';
 import { features } from './constants';
-
-const clickHandler = () => {
-  const prescoring = document.getElementById('prescoring');
-  prescoring?.scrollIntoView({ behavior: 'smooth' });
-};
+import { useBanner } from './hooks/useBanner';
 
 export function Platinum() {
+  const {step, clickHandler} = useBanner();
+
   return (
     <section className={styles.platinum}>
       <div className={styles.platinum__info}>
@@ -35,7 +33,7 @@ export function Platinum() {
           horizontalPadding="1rem"
           verticalPadding="1rem"
           borderRadius="8px"
-          text="Apply for card"
+          text={step === 1 ? 'Apply for card' : 'Continue registration'}
           handler={clickHandler}
         />
       </div>
