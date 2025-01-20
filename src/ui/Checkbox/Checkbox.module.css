@@ -1,0 +1,13 @@
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.125rem;
+  color: #1a202c;
+}
+
+.wrapper {
+  display: flex;
+}

@@ -33,7 +33,7 @@ export function NotFound() {
           <div className={styles.imagePart__wrapper}>
             <img
               className={styles.imagePart__img}
-              src="src/assets/404.png"
+              src="/src/assets/404.png"
               alt=""
             />
           </div>

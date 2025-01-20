@@ -12,6 +12,11 @@ import HomePage from './pages/HomePage';
 import { Layout } from './pages/Layout';
 import { Loan } from './pages/Loan';
 import { NotFound } from './components/NotFound/NotFound';
+import { Scoring } from './components/Scoring';
+import { Document } from './components/Document';
+import { Sign } from './components/Sign';
+import { Code } from './components/Code';
+import { ProtectedRoute } from './components/ProtectedRoute';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +30,26 @@ const router = createBrowserRouter([
       {
         path: '/loan',
         element: <Loan />,
+      },
+      {
+        path: '/loan/:applicationId',
+        element: <ProtectedRoute requiredStep={2} />,
+        children: [{ path: '', element: <Scoring /> }],
+      },
+      {
+        path: 'loan/:applicationId/document/',
+        element: <ProtectedRoute requiredStep={3} />,
+        children: [{ path: '', element: <Document /> }],
+      },
+      {
+        path: 'loan/:applicationId/document/sign',
+        element: <ProtectedRoute requiredStep={4} />,
+        children: [{ path: '', element: <Sign /> }],
+      },
+      {
+        path: 'loan/:applicationId/code',
+        element: <ProtectedRoute requiredStep={5} />,
+        children: [{ path: '', element: <Code /> }],
       },
     ],
   },

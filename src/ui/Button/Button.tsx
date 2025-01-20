@@ -1,22 +1,22 @@
-import classes from './Button.module.css';
+import styles from './Button.module.css';
+import { ButtonProps } from './types/ButtonProps.type';
 
 export function Button({
   text,
   borderRadius,
   horizontalPadding,
   verticalPadding,
+  isRed = false,
+  isDisabled = false,
   handler,
-}: {
-  text: string;
-  borderRadius: string;
-  horizontalPadding: string;
-  verticalPadding: string;
-  handler: () => void;
-}) {
+}: ButtonProps) {
   const padding = `${verticalPadding} ${horizontalPadding}`;
   return (
     <button
-      className={classes.button}
+      disabled={isDisabled}
+      className={
+        isRed ? `${styles.button} ${styles.button__deny}` : styles.button
+      }
       style={{ borderRadius, padding }}
       onClick={handler}
     >

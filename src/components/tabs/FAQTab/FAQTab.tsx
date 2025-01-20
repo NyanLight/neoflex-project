@@ -5,7 +5,7 @@ import styles from './FAQTab.module.css';
 export function FAQTab() {
   return (
     <div className={styles.faq}>
-      <article>
+      <article className={styles.firstAccordion}>
         <h2 className={styles.title}>Issuing and receiving a card</h2>
         <Accordion data={firstSectionProps} />
       </article>

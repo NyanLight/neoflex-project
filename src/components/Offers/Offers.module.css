@@ -1,0 +1,28 @@
+.offers {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  margin-bottom: 6rem;
+}
+
+.sentDiv {
+  border: solid 1px #5b35d5;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  padding: 1.5rem 0 2.125rem 0;
+}
+
+.sentDiv__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1c1c1e;
+  margin-bottom: 2rem;
+}
+
+.sentDiv__regular {
+  color: #4f5665;
+  font-weight: 500;
+}

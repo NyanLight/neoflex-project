@@ -1,0 +1,84 @@
+.sign {
+  max-width: 1300px;
+  margin: 0 auto 6.25rem;
+  padding-top: 1.5rem;
+  padding-top: 6.5rem;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.topPart {
+  display: flex;
+  gap: 7.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  color: #1c1c1e;
+  font-weight: 700;
+}
+
+.step {
+  color: #000000;
+}
+
+.regular {
+  color: #4f5665;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.pdf {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: end;
+}
+
+.sentDiv {
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  padding: 5.5rem 0 5rem 0;
+}
+
+.sentDiv__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1c1c1e;
+  margin: 0 auto 2rem;
+  max-width: 500px;
+}
+
+.sentDiv__regular {
+  color: #4f5665;
+  font-weight: 500;
+  max-width: 400px;
+  margin: auto;
+}
+
+@media (max-width: 520px) {
+  .topPart {
+    gap: 1rem;
+  }
+  .regular {
+    width: 85%;
+    margin: 0 auto 2rem;
+  }
+
+  .checkbox {
+    justify-content: center;
+  }
+
+  .pdf {
+    margin-bottom: 1rem;
+  }
+}
