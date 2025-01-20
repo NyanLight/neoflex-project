@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Button } from '../../ui/Button';
 import { Table } from '../../ui/Table';
 import styles from './Document.module.css';
@@ -6,59 +5,24 @@ import { headers } from './constants';
 import { useNavigate } from 'react-router';
 import { Checkbox } from '../../ui/Checkbox';
 import { useParams } from 'react-router';
-import { useAuthStore } from '../../store';
-import { denyApplication } from '../../api/denyApplication.api';
-import { sendDocument } from '../../api/sendDocument.api';
-import { fetchTable } from '../../api/fetchTable.api';
+import { useFetchTable } from './hooks/useFetchTable';
+import { useSendDocument } from './hooks/useSendDocument';
+import { useDenyApplication } from './hooks/useDenyApplication';
+import { useModal } from './hooks/useModal';
+
 
 export function Document() {
   const { applicationId } = useParams();
-  const [denySent, setDenySent] = useState<boolean>(false);
-  const [documentSent, setDocumentSent] = useState<boolean>(false);
-  const [modal, setModal] = useState<boolean>(false);
-  const [data, setData] = useState([]);
   const navigate = useNavigate();
+  const data = useFetchTable(applicationId ?? '');
+  const { documentSent, handleSend } = useSendDocument(applicationId ?? '');
+  const { denySent, handleDeny } = useDenyApplication(applicationId ?? '');
+  const { modal, toggleModal } = useModal();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (applicationId) try {
-        const fetchedData = await fetchTable(applicationId);
-        setData(fetchedData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, [applicationId]);
-
-  
-  const handleSend = async () => {
-    if (applicationId) try {
-      sendDocument(applicationId);
-      setDocumentSent(true);
-      useAuthStore.getState().setStep(4);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  
-  const handleDeny = async () => {
-    if (applicationId) try {
-      await denyApplication(applicationId);
-      setDenySent(true);
-      localStorage.removeItem('auth');
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  
   const goHome = () => {
     navigate('/');
   };
-  
-  const toggleModal = () => {
-    setModal(!modal);
-  };
+
   return (
     <section className={styles.document}>
       {documentSent ? (

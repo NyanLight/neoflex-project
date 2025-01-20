@@ -1,24 +1,12 @@
 import { Checkbox } from '../../ui/Checkbox';
 import styles from './Sign.module.css';
-import { useState } from 'react';
-import creditCardOffer from '/src/assets/credit-card-offer.pdf'
+import creditCardOffer from '/src/assets/credit-card-offer.pdf';
 import { useParams } from 'react-router';
-import { useAuthStore } from '../../store';
-import { sendSign } from '../../api/sendSign.api';
+import { useSendSign } from './hooks/useSendSign';
 
 export function Sign() {
-  const {applicationId} = useParams();
-  const [isSent, setSend] = useState<boolean>(false);
-
-  const handleSign = async () => {
-    if (applicationId) try {
-      await sendSign(applicationId)
-      setSend(true);
-      useAuthStore.getState().setStep(5);
-    } catch (error) {
-      console.error(error)
-    }
-  }
+  const { applicationId } = useParams();
+  const { isSent, handleSign } = useSendSign(applicationId as string);
 
   return (
     <section className={styles.sign}>

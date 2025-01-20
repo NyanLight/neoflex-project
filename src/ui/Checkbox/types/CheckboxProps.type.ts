@@ -1,3 +1,3 @@
-import { ButtonProps } from "../../Button/types/ButtonProps.type";
+import { ButtonProps } from '../../Button/types/ButtonProps.type';
 
-export type CheckboxProps = ButtonProps & {label: string, gap: string};
+export type CheckboxProps = ButtonProps & { label: string; gap: string };

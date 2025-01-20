@@ -8,25 +8,25 @@ type OfferState = {
 };
 
 type AuthState = {
-  applicationId: string,
+  applicationId: string;
   setApplicationId: (application: string) => void;
-  step: number,
+  step: number;
   setStep: (step: number) => void;
-}
+};
 
 export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
       applicationId: '',
-      setApplicationId: (applicationId) => set({applicationId}),
+      setApplicationId: (applicationId) => set({ applicationId }),
       step: 1,
-      setStep: (step) => set({step}),
+      setStep: (step) => set({ step }),
     }),
     {
       name: 'auth',
     },
   ),
-)
+);
 
 export const useOfferStore = create<OfferState>()(
   persist(

@@ -19,12 +19,10 @@ export function Checkbox({
   };
 
   return (
-    <div className={styles.wrapper} style={{gap}}>
+    <div className={styles.wrapper} style={{ gap }}>
       <div className={styles.checkbox}>
-          <input type="checkbox" checked={checked} onChange={handleCheckbox} />
-          <div>  
-            {label}
-          </div>
+        <input type="checkbox" checked={checked} onChange={handleCheckbox} />
+        <div>{label}</div>
       </div>
       <Button
         borderRadius={borderRadius}

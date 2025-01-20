@@ -1,78 +1,22 @@
 import { useParams, useNavigate } from 'react-router';
 import { Button } from '../../ui/Button';
 import styles from './Code.module.css';
-import { ChangeEvent, useEffect, useState } from 'react';
-import { fetchCode } from '../../api/fetchCode.api';
+import { useFetchCode } from './hooks/useFetchCode';
+import { useOtp } from './hooks/useOtp';
+import { Loader } from '../../ui/Loader';
 
 export function Code() {
-  const [otp, setOtp] = useState(new Array(4).fill(''));
-  const [invalid, setInvalid] = useState(false);
-  const [isSent, setSent] = useState<boolean>(false);
-  const [answer, setAnswer] = useState(null);
   const { applicationId } = useParams();
   const navigate = useNavigate();
+  const { answer } = useFetchCode(applicationId as string);
+  const { otp, invalid, isSent, handleChange,isLoading } = useOtp(
+    applicationId as string,
+    answer,
+  );
 
   const handleCongratulationsBtn = () => {
     navigate('/');
   };
-
-  useEffect(() => {
-    const downloadCode = async () => {
-      if (applicationId)
-        try {
-          const fetchedAnswer = await fetchCode(applicationId);
-          await setAnswer(fetchedAnswer);
-        } catch (error) {
-          console.error(error);
-        }
-    };
-    downloadCode();
-  }, [applicationId]);
-
-  function handleChange(element: ChangeEvent<HTMLInputElement>, index: number) {
-    if (isNaN(Number(element.target.value))) return;
-    setOtp([
-      ...otp.map((data, i) => (index === i ? element.target.value : data)),
-    ]);
-
-    if (element.target.value && element.target.nextSibling) {
-      (element.target.nextSibling as HTMLElement)?.focus();
-    }
-  }
-
-  useEffect(() => {
-    const filledFields = otp.filter((value) => {
-      return value != '';
-    });
-    if (filledFields.length === 4 && otp.join('') != answer) {
-      setInvalid(true);
-    } else {
-      setInvalid(false);
-    }
-  }, [answer, otp]);
-
-  useEffect(() => {
-    const joined = otp.join('');
-    if (joined === answer) {
-      const sendCode = async () => {
-        const response = await fetch(
-          `http://localhost:8080/document/${applicationId}/sign/code`,
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: joined,
-          },
-        );
-        if (response.ok) {
-          setSent(true);
-          localStorage.removeItem('auth');
-        }
-      };
-      sendCode();
-    }
-  }, [otp, answer, applicationId]);
 
   return (
     <div>
@@ -99,13 +43,16 @@ export function Code() {
         </div>
       ) : (
         <section className={styles.code}>
-          <div className={styles.wrapper}>
+          {isLoading ? 
+          <div className={styles.loader}><Loader isDisplaying={true} /></div> : <div className={styles.wrapper}>
+            <Loader isDisplaying={false} />
             <h2 className={styles.title}>Please enter confirmation code</h2>
             <div className={styles.otp}>
               <div className={styles.otp__fields}>
                 {otp.map((data, index) => (
                   <input
                     value={data}
+                    key={index}
                     onChange={(element) => handleChange(element, index)}
                     className={
                       data == ''
@@ -121,7 +68,7 @@ export function Code() {
                 Invalid confirmation code
               </div>
             </div>
-          </div>
+          </div>}
         </section>
       )}
     </div>

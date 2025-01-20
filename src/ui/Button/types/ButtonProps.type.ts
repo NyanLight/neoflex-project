@@ -6,4 +6,4 @@ export type ButtonProps = {
   isDisabled?: boolean;
   verticalPadding: string;
   handler: () => void;
-}
+};

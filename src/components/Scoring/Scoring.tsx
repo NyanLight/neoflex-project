@@ -16,12 +16,13 @@ import { Input } from '../../ui/Input';
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import { useAuthStore } from '../../store';
+import { mutateRequest } from './utils';
 
 export function Scoring() {
   const [isSent, setSend] = useState<boolean>(false);
-  const {applicationId} = useParams();
+  const { applicationId } = useParams();
   const fetchURL = `http://localhost:8080/application/registration/${applicationId}`;
-  
+
   function handleSending() {
     setSend(true);
   }
@@ -32,6 +33,7 @@ export function Scoring() {
       return validStyle;
     return undefined;
   };
+
   const {
     register,
     handleSubmit,
@@ -46,22 +48,7 @@ export function Scoring() {
       ]),
     );
 
-    const request = {
-      gender: spacelessData.gender,
-      maritalStatus: spacelessData.maritalStatus,
-      dependentAmount: spacelessData.dependentAmount,
-      passportIssueDate: spacelessData.passportIssueDate,
-      passportIssueBranch: spacelessData.passportIssueBranch,
-      employment: {
-        employmentStatus: spacelessData.employmentStatus,
-        employerINN: spacelessData.employerINN,
-        salary: spacelessData.salary,
-        position: spacelessData.position,
-        workExperienceTotal: spacelessData.workExperienceTotal,
-        workExperienceCurrent: spacelessData.workExperienceCurrent,
-      },
-      account: '11223344556677889900',
-    };
+    const request = mutateRequest(spacelessData as FormFields);
 
     const response = await fetch(fetchURL, {
       method: 'PUT',

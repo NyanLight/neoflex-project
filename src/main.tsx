@@ -34,30 +34,22 @@ const router = createBrowserRouter([
       {
         path: '/loan/:applicationId',
         element: <ProtectedRoute requiredStep={2} />,
-        children: [
-          { path: '', element: <Scoring /> },
-        ],
+        children: [{ path: '', element: <Scoring /> }],
       },
       {
         path: 'loan/:applicationId/document/',
         element: <ProtectedRoute requiredStep={3} />,
-        children: [
-          { path: '', element: <Document /> },
-        ],
+        children: [{ path: '', element: <Document /> }],
       },
       {
         path: 'loan/:applicationId/document/sign',
         element: <ProtectedRoute requiredStep={4} />,
-        children: [
-          { path: '', element: <Sign /> },
-        ],
+        children: [{ path: '', element: <Sign /> }],
       },
       {
         path: 'loan/:applicationId/code',
         element: <ProtectedRoute requiredStep={5} />,
-        children: [
-          { path: '', element: <Code /> },
-        ],
+        children: [{ path: '', element: <Code /> }],
       },
     ],
   },

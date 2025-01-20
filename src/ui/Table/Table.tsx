@@ -6,7 +6,7 @@ export function Table({
   data,
   headers,
 }: {
-  headers: {label: string, key: keyof TableRow}[];
+  headers: { label: string; key: keyof TableRow }[];
   data: TableRow[];
 }) {
   const [sort, setSort] = useState({ keyToSort: 'number', direction: 'asc' });
@@ -26,11 +26,16 @@ export function Table({
   function getSortedArray(array: TableRow[]) {
     if (sort.direction === 'asc') {
       return array.sort((a, b) =>
-        a[sort.keyToSort as keyof TableRow] > b[sort.keyToSort as keyof TableRow] ? 1 : -1,
+        a[sort.keyToSort as keyof TableRow] >
+        b[sort.keyToSort as keyof TableRow]
+          ? 1
+          : -1,
       );
     }
     return array.sort((a, b) =>
-      a[sort.keyToSort as keyof TableRow] > b[sort.keyToSort as keyof TableRow] ? -1 : 1,
+      a[sort.keyToSort as keyof TableRow] > b[sort.keyToSort as keyof TableRow]
+        ? -1
+        : 1,
     );
   }
 
