@@ -8,9 +8,9 @@ import { Loader } from '../../ui/Loader';
 export function Code() {
   const { applicationId } = useParams();
   const navigate = useNavigate();
-  const { answer } = useFetchCode(applicationId as string);
+  const { answer } = useFetchCode(applicationId ?? '');
   const { otp, invalid, isSent, handleChange,isLoading } = useOtp(
-    applicationId as string,
+    applicationId ?? '',
     answer,
   );
 

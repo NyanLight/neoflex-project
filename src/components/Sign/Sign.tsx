@@ -6,7 +6,7 @@ import { useSendSign } from './hooks/useSendSign';
 
 export function Sign() {
   const { applicationId } = useParams();
-  const { isSent, handleSign } = useSendSign(applicationId as string);
+  const { isSent, handleSign } = useSendSign(applicationId ?? '');
 
   return (
     <section className={styles.sign}>
