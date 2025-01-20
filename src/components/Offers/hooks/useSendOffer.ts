@@ -15,7 +15,6 @@ export function useSendOffer () {
         if (response.ok) {
           setSend(true);
           useAuthStore.getState().setStep(2);
-          localStorage.removeItem('offer-sent');
           localStorage.removeItem('offer-storage');
         }
       }

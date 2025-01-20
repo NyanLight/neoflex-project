@@ -46,6 +46,7 @@ export function useOtp(applicationId: string, answer: null | string) {
         if (response.ok) {
           setSent(true);
           localStorage.removeItem('auth');
+          localStorage.removeItem('offer-sent');
           setLoading(false);
         }
       };

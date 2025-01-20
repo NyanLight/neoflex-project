@@ -10,6 +10,7 @@ export function useDenyApplication(applicationId: string) {
         await denyApplication(applicationId);
         setDenySent(true);
         localStorage.removeItem('auth');
+        localStorage.removeItem('offer-sent');
       } catch (error) {
         console.error(error);
       }
