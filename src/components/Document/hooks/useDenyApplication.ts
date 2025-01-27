@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { denyApplication } from '../../../api/denyApplication.api';
+import { clearCache } from '../../../utils';
 
 export function useDenyApplication(applicationId: string) {
   const [denySent, setDenySent] = useState<boolean>(false);
@@ -9,8 +10,7 @@ export function useDenyApplication(applicationId: string) {
       try {
         await denyApplication(applicationId);
         setDenySent(true);
-        localStorage.removeItem('auth');
-        localStorage.removeItem('offer-sent');
+        clearCache();
       } catch (error) {
         console.error(error);
       }
