@@ -37,7 +37,7 @@ export const selectsFirstPart: Array<{
   {
     required: true,
     name: 'maritalStatus',
-    label: "What's your gender",
+    label: "What's your marital status",
     rules: { required: 'Select your marital status' },
     data: [
       { label: '', value: '' },
