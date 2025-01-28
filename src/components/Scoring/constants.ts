@@ -31,7 +31,7 @@ export const selectsFirstPart: Array<{
     data: [
       { label: '', value: '' },
       { label: 'Male', value: 'MALE' },
-      { label: 'Female', value: 'FAMALE' },
+      { label: 'Female', value: 'FEMALE' },
     ],
   },
   {
@@ -65,7 +65,7 @@ export const selectsSecondPart: Array<{
       { label: '', value: '' },
       {
         label: 'Unemployed',
-        value: 'ENEMPLOYED',
+        value: 'UNEMPLOYED',
       },
       {
         label: 'Self-employed',
