@@ -9,7 +9,9 @@ import { useFetchTable } from './hooks/useFetchTable';
 import { useSendDocument } from './hooks/useSendDocument';
 import { useDenyApplication } from './hooks/useDenyApplication';
 import { useModal } from './hooks/useModal';
-
+import { useEffect } from 'react';
+import { fetchStatus } from '../../api/fetchStatus.api';
+import { clearCache } from '../../utils';
 
 export function Document() {
   const { applicationId } = useParams();
@@ -22,6 +24,18 @@ export function Document() {
   const goHome = () => {
     navigate('/');
   };
+
+  useEffect(() => {
+    async function handleStatus() {
+      const status = await fetchStatus(applicationId as string);
+      if (status === 'CC_DENIED') {
+        clearCache();
+        goHome();
+      }
+    }
+
+    handleStatus();
+  }, []);
 
   return (
     <section className={styles.document}>

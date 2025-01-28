@@ -31,13 +31,13 @@ export const selectsFirstPart: Array<{
     data: [
       { label: '', value: '' },
       { label: 'Male', value: 'MALE' },
-      { label: 'Female', value: 'FAMALE' },
+      { label: 'Female', value: 'FEMALE' },
     ],
   },
   {
     required: true,
     name: 'maritalStatus',
-    label: "What's your gender",
+    label: "What's your marital status",
     rules: { required: 'Select your marital status' },
     data: [
       { label: '', value: '' },
@@ -65,7 +65,7 @@ export const selectsSecondPart: Array<{
       { label: '', value: '' },
       {
         label: 'Unemployed',
-        value: 'ENEMPLOYED',
+        value: 'UNEMPLOYED',
       },
       {
         label: 'Self-employed',

@@ -5,7 +5,7 @@ import { features } from './constants';
 import { useBanner } from './hooks/useBanner';
 
 export function Platinum() {
-  const {step, clickHandler} = useBanner();
+  const { step, clickHandler } = useBanner();
 
   return (
     <section className={styles.platinum}>

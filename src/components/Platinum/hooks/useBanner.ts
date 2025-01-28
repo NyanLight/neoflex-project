@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
-import { useAuthStore } from "../../../store";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useAuthStore } from '../../../store';
 
 export function useBanner() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
 
   const clickHandler = () => {
@@ -34,5 +34,5 @@ export function useBanner() {
     setStep(currentStep);
   }, []);
 
-  return {step, clickHandler};
+  return { step, clickHandler };
 }

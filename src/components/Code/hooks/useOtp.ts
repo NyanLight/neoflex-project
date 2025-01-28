@@ -54,5 +54,5 @@ export function useOtp(applicationId: string, answer: null | string) {
     }
   }, [otp, answer, applicationId]);
 
-  return { otp, invalid, isSent, handleChange, isLoading};
+  return { otp, invalid, isSent, handleChange, isLoading };
 }
