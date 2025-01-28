@@ -19,7 +19,7 @@ export function Design() {
       </div>
       <div className={classes.design__cards}>
         {cards.map((card) => (
-          <img src={card.src} alt="" key={card.key} />
+          <img data-testid='img' src={card.src} alt="" key={card.key} />
         ))}
       </div>
     </section>
