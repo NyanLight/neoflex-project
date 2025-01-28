@@ -1,4 +1,4 @@
 export function clearCache() {
-    localStorage.removeItem('auth');
-    localStorage.removeItem('offer-sent');
+  localStorage.removeItem('auth');
+  localStorage.removeItem('offer-sent');
 }

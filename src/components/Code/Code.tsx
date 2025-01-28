@@ -9,7 +9,7 @@ export function Code() {
   const { applicationId } = useParams();
   const navigate = useNavigate();
   const { answer } = useFetchCode(applicationId ?? '');
-  const { otp, invalid, isSent, handleChange,isLoading } = useOtp(
+  const { otp, invalid, isSent, handleChange, isLoading } = useOtp(
     applicationId ?? '',
     answer,
   );
@@ -43,32 +43,37 @@ export function Code() {
         </div>
       ) : (
         <section className={styles.code}>
-          {isLoading ? 
-          <div className={styles.loader}><Loader isDisplaying={true} /></div> : <div className={styles.wrapper}>
-            <Loader isDisplaying={false} />
-            <h2 className={styles.title}>Please enter confirmation code</h2>
-            <div className={styles.otp}>
-              <div className={styles.otp__fields}>
-                {otp.map((data, index) => (
-                  <input
-                    value={data}
-                    key={index}
-                    onChange={(element) => handleChange(element, index)}
-                    className={
-                      data == ''
-                        ? styles.input
-                        : `${styles.input} ${styles.input__filled}`
-                    }
-                    maxLength={1}
-                    type="text"
-                  />
-                ))}
-              </div>
-              <div className={invalid ? styles.otp__error : styles.hidden}>
-                Invalid confirmation code
+          {isLoading ? (
+            <div className={styles.loader}>
+              <Loader isDisplaying={true} />
+            </div>
+          ) : (
+            <div className={styles.wrapper}>
+              <Loader isDisplaying={false} />
+              <h2 className={styles.title}>Please enter confirmation code</h2>
+              <div className={styles.otp}>
+                <div className={styles.otp__fields}>
+                  {otp.map((data, index) => (
+                    <input
+                      value={data}
+                      key={index}
+                      onChange={(element) => handleChange(element, index)}
+                      className={
+                        data == ''
+                          ? styles.input
+                          : `${styles.input} ${styles.input__filled}`
+                      }
+                      maxLength={1}
+                      type="text"
+                    />
+                  ))}
+                </div>
+                <div className={invalid ? styles.otp__error : styles.hidden}>
+                  Invalid confirmation code
+                </div>
               </div>
             </div>
-          </div>}
+          )}
         </section>
       )}
     </div>

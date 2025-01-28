@@ -4,7 +4,7 @@ import { OfferData } from '../../types/OfferData.type';
 import { useSendOffer } from './hooks/useSendOffer';
 
 export function Offers({ offers }: { offers: OfferData[] }) {
- const {isSent, handleSending} = useSendOffer();
+  const { isSent, handleSending } = useSendOffer();
 
   return (
     <section className={styles.offers}>
