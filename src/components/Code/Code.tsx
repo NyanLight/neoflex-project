@@ -42,10 +42,10 @@ export function Code() {
           </div>
         </div>
       ) : (
-        <section className={styles.code}>
+        <section  className={styles.code}>
           {isLoading ? (
-            <div className={styles.loader}>
-              <Loader isDisplaying={true} />
+            <div data-testId='loader'  className={styles.loader}>
+              <Loader  isDisplaying={true} />
             </div>
           ) : (
             <div className={styles.wrapper}>

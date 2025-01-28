@@ -6,7 +6,7 @@ export function Footer() {
     <footer className={classes.footer}>
       <div className={classes.footer__wrapper}>
         <div className={classes.footer__top}>
-          <img src="/src/assets/Logo.svg" className={classes.footer__logo} />
+          <img src="/src/assets/Logo.svg" className={classes.footer__logo} data-testid='logo' />
           <address>
             <a href="tel:+74959842513" className={classes.footer__phone}>
               +7 (495) 984 25 13
