@@ -1,4 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react';
+import { clearCache } from '../../../utils';
 
 export function useOtp(applicationId: string, answer: null | string) {
   const [otp, setOtp] = useState(new Array(4).fill(''));
@@ -45,8 +46,7 @@ export function useOtp(applicationId: string, answer: null | string) {
         );
         if (response.ok) {
           setSent(true);
-          localStorage.removeItem('auth');
-          localStorage.removeItem('offer-sent');
+          clearCache();
           setLoading(false);
         }
       };
