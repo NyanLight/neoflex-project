@@ -2,12 +2,13 @@ import styles from './Loader.module.css';
 
 export function Loader({ isDisplaying }: { isDisplaying: boolean }) {
   return (
-    <div
+    <div 
       className={styles.wrapper}
       style={isDisplaying ? { display: 'block' } : { display: 'none' }}
     >
       <img
         className={styles.loader}
+        data-testid='loader'
         src="/src/assets/spinner.svg"
         alt="Loading..."
       />

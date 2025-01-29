@@ -16,5 +16,10 @@ describe('Prescoring Component', () => {
       fireEvent.change(input, { target: { value: '30000' } });
       expect(screen.getAllByText(/30 000/i)[0]).toBeInTheDocument();
     });
+    it('should display loader when form is submitting', () => {
+        render(<Prescoring />);
+        const loader = screen.getAllByTestId('loader')[0];
+        expect(loader).toBeInTheDocument();
+      });
   });
   

@@ -176,7 +176,7 @@ export function Prescoring() {
           <div className={styles.submit}>
             {!isSubmitting ? (
               <>
-                <Loader isDisplaying={false} />
+                <Loader  isDisplaying={false} />
                 <Button
                   text="Continue"
                   borderRadius="8px"

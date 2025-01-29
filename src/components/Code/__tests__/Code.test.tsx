@@ -33,7 +33,7 @@ describe('Code Component', () => {
     (useOtp as jest.Mock).mockReturnValue({ isLoading: true, isSent: false });
     render(<Code />);
 
-    expect(screen.getByTestId('loader')).toBeInTheDocument();
+    expect(screen.getAllByTestId('loader')[0]).toBeInTheDocument();
   });
 
   it('renders OTP input fields when isLoading is false', async () => {
