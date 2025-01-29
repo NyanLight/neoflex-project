@@ -4,6 +4,7 @@ import '@testing-library/jest-dom/vitest';
 import { Platinum } from '../Platinum';
 import { features } from '../constants';
 import { MemoryRouter } from 'react-router';
+import { useAuthStore } from '../../../store';
 
 describe('Platinum Component', () => {
   afterEach(cleanup);
@@ -31,14 +32,15 @@ describe('Platinum Component', () => {
     });
   });
 
-  it('renders the button with correct text', () => {
+  it('renders the button with correct text with step > 1', () => {
+    useAuthStore.getState().setStep(2);
     render(
       <MemoryRouter>
         <Platinum />
       </MemoryRouter>,
     );
     expect(
-      screen.getByText(/apply for card|continue registration/i),
+      screen.getByText(/continue registration/i),
     ).toBeInTheDocument();
   });
 });
