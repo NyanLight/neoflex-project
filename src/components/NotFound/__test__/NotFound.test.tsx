@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import { vi, describe, it, expect, afterEach } from 'vitest';
+import { describe, it, expect, afterEach } from 'vitest';
 import '@testing-library/jest-dom/vitest';
 import { NotFound } from '../NotFound';
 import { MemoryRouter } from 'react-router';
