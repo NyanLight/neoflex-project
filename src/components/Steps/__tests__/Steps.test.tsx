@@ -18,5 +18,15 @@ describe('Steps Component', () => {
         expect(screen.getByText(step.text)).toBeInTheDocument();
       });
     });
+
+    it('should render each step with correct number and text', () => {
+        render(<Steps />);
+        stepsData.forEach((step) => {
+          const stepNumber = screen.getByText(step.number);
+          const stepText = screen.getByText(step.text);
+          expect(stepNumber).toBeInTheDocument();
+          expect(stepText).toBeInTheDocument();
+        });
   });
+});
   
