@@ -1,4 +1,4 @@
-import { FieldValues } from 'react-hook-form';
+import { FieldValues, Path } from 'react-hook-form';
 import { InputProps } from './types/InputProps.type';
 import { Label } from '../Label';
 import styles from './Input.module.css';
@@ -18,7 +18,7 @@ export const Input = <T extends FieldValues>({
       <input
         id={name}
         defaultValue={undefined}
-        {...register(name, rules)}
+        {...register(name as Path<T>, rules)}
         {...inputProps}
         className={styles.input}
       />
