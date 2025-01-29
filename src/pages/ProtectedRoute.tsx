@@ -1,5 +1,5 @@
 import { Navigate, Outlet, useParams } from 'react-router';
-import { useAuthStore } from '../../store';
+import { useAuthStore } from '../store';
 
 export const ProtectedRoute = ({ requiredStep }: { requiredStep: number }) => {
   const { applicationId } = useParams();

@@ -9,6 +9,7 @@ import '@fontsource-variable/rubik/index.css';
 import '@fontsource-variable/nunito-sans/index.css';
 import './index.css';
 import HomePage from './pages/HomePage';
+import { ProtectedRoute } from './pages/ProtectedRoute';
 import { Layout } from './pages/Layout';
 import { Loan } from './pages/Loan';
 import { NotFound } from './components/NotFound/NotFound';
@@ -16,7 +17,6 @@ import { Scoring } from './components/Scoring';
 import { Document } from './components/Document';
 import { Sign } from './components/Sign';
 import { Code } from './components/Code';
-import { ProtectedRoute } from './components/ProtectedRoute';
 
 const router = createBrowserRouter([
   {
