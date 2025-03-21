@@ -11,6 +11,7 @@
 ## Стек 
 * Typescript
 * React
+* CSS Modules
 * React Router
 * Vite
 * Zustand
